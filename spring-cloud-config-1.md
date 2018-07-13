@@ -1,8 +1,10 @@
-##**Spring-Cloud-Config¼ò½é**
-Spring-Cloud-ConfigÊÇSping-CloudÏÂÓÃÓÚ·Ö²¼Ê½ÅäÖÃ¹ÜÀíµÄ×é¼ş£¬·Ö³ÉÁËÁ½¸ö½ÇÉ«Config-ServerºÍConfig-Client£»Config-Server¶Ë¼¯ÖĞÊ½´æ´¢/¹ÜÀíÅäÖÃÎÄ¼ş£¬²¢¶ÔÍâÌá¹©½Ó¿Ú·½±ãConfig-Client·ÃÎÊ£¬½Ó¿ÚÊ¹ÓÃHTTPµÄ·½Ê½¶ÔÍâÌá¹©·ÃÎÊ£»Config-ClientÍ¨¹ı½Ó¿Ú»ñÈ¡ÅäÖÃÎÄ¼ş£¬È»ºó¿ÉÒÔÔÚÓ¦ÓÃÖĞÊ¹ÓÃ£»Config-Server´æ´¢/¹ÜÀíµÄÅäÖÃÎÄ¼ş¿ÉÒÔÀ´×Ô±¾µØÎÄ¼ş£¬Ô¶³ÌGit²Ö¿âÒÔ¼°Ô¶³ÌSvn²Ö¿â£»
+## **Spring-Cloud-Configç®€ä»‹**
 
-##**Config-Server¶Ë**
-###1.Config-ServerÒÀÀµ
+Spring-Cloud-Configæ˜¯Sping-Cloudä¸‹ç”¨äºåˆ†å¸ƒå¼é…ç½®ç®¡ç†çš„ç»„ä»¶ï¼Œåˆ†æˆäº†ä¸¤ä¸ªè§’è‰²Config-Serverå’ŒConfig-Clientï¼›Config-Serverç«¯é›†ä¸­å¼å­˜å‚¨/ç®¡ç†é…ç½®æ–‡ä»¶ï¼Œå¹¶å¯¹å¤–æä¾›æ¥å£æ–¹ä¾¿Config-Clientè®¿é—®ï¼Œæ¥å£ä½¿ç”¨HTTPçš„æ–¹å¼å¯¹å¤–æä¾›è®¿é—®ï¼›Config-Clienté€šè¿‡æ¥å£è·å–é…ç½®æ–‡ä»¶ï¼Œç„¶åå¯ä»¥åœ¨åº”ç”¨ä¸­ä½¿ç”¨ï¼›Config-Serverå­˜å‚¨/ç®¡ç†çš„é…ç½®æ–‡ä»¶å¯ä»¥æ¥è‡ªæœ¬åœ°æ–‡ä»¶ï¼Œè¿œç¨‹Gitä»“åº“ä»¥åŠè¿œç¨‹Svnä»“åº“ï¼›
+
+## **Config-Serverç«¯**
+
+### 1.Config-Serverä¾èµ–
 
 ```
 <dependency>
@@ -11,24 +13,30 @@ Spring-Cloud-ConfigÊÇSping-CloudÏÂÓÃÓÚ·Ö²¼Ê½ÅäÖÃ¹ÜÀíµÄ×é¼ş£¬·Ö³ÉÁËÁ½¸ö½ÇÉ«Config
     <version>2.0.0.RELEASE</version>
 </dependency>
 ```
-×¢£º2.0ÒÔºóµÄ°æ±¾ĞèÒªjdk1.8¼°ÒÔÉÏ°æ±¾
 
-###2.×¼±¸±»¹ÜÀíµÄÅäÖÃÎÄ¼ş
-Spring-Cloud-ConfigÌá¹©ÁË¶Ô¶àÖÖ»·¾³ÅäÖÃÎÄ¼şµÄÖ§³Ö£¬±ÈÈç£º¿ª·¢»·¾³£¬²âÊÔ»·¾³£¬Éú²ú»·¾³µÈ£»ÎªÁË¸ü¼ÓÈ«ÃæµÄÄ£Äâ£¬×¼±¸Èı¸öÅäÖÃ·Ö±ğÈçÏÂ£º
+æ³¨ï¼š2.0ä»¥åçš„ç‰ˆæœ¬éœ€è¦jdk1.8åŠä»¥ä¸Šç‰ˆæœ¬
+
+### 2.å‡†å¤‡è¢«ç®¡ç†çš„é…ç½®æ–‡ä»¶
+
+Spring-Cloud-Configæä¾›äº†å¯¹å¤šç§ç¯å¢ƒé…ç½®æ–‡ä»¶çš„æ”¯æŒï¼Œæ¯”å¦‚ï¼šå¼€å‘ç¯å¢ƒï¼Œæµ‹è¯•ç¯å¢ƒï¼Œç”Ÿäº§ç¯å¢ƒç­‰ï¼›ä¸ºäº†æ›´åŠ å…¨é¢çš„æ¨¡æ‹Ÿï¼Œå‡†å¤‡ä¸‰ä¸ªé…ç½®åˆ†åˆ«å¦‚ä¸‹ï¼š
 
 ```
 config-dev.properties
 config-test.properties
 config-pro.properties
 ```
-·Ö±ğÊÇ¿ª·¢£¬²âÊÔÒÔ¼°Éú²úµÄÅäÖÃÎÄ¼ş£¬ÄÚÈİÒ²±È½Ï¼òµ¥ÈçÏÂËùÊ¾£º
+
+åˆ†åˆ«æ˜¯å¼€å‘ï¼Œæµ‹è¯•ä»¥åŠç”Ÿäº§çš„é…ç½®æ–‡ä»¶ï¼Œå†…å®¹ä¹Ÿæ¯”è¾ƒç®€å•å¦‚ä¸‹æ‰€ç¤ºï¼š
 
 ```
 foo=hello dev/test/pro
 ```
-###3.×¼±¸Æô¶¯ÅäÖÃÎÄ¼ş
-±»¹ÜÀíµÄÅäÖÃÎÄ¼ş¿ÉÒÔÀ´×Ô¶à¸öµØ·½£¬°üÀ¨£º±¾µØÎÄ¼ş£¬Ô¶³ÌGit²Ö¿âÒÔ¼°Ô¶³ÌSvn²Ö¿â£¬ÏÂÃæ·Ö±ğÔÚresources/application.propertiesÖĞ×öÅäÖÃ;
-####3.1±¾µØÎÄ¼ş
+
+### 3.å‡†å¤‡å¯åŠ¨é…ç½®æ–‡ä»¶
+
+è¢«ç®¡ç†çš„é…ç½®æ–‡ä»¶å¯ä»¥æ¥è‡ªå¤šä¸ªåœ°æ–¹ï¼ŒåŒ…æ‹¬ï¼šæœ¬åœ°æ–‡ä»¶ï¼Œè¿œç¨‹Gitä»“åº“ä»¥åŠè¿œç¨‹Svnä»“åº“ï¼Œä¸‹é¢åˆ†åˆ«åœ¨resources/application.propertiesä¸­åšé…ç½®;
+
+#### 3.1æœ¬åœ°æ–‡ä»¶
 
 ```
 spring.application.name=config-server
@@ -36,9 +44,10 @@ server.port=8888
 spring.profiles.active=native
 spring.cloud.config.server.native.searchLocations=file:E:/github/spring-cloud-config-repo
 ```
-Ö¸¶¨ÁËserver¶ËÆô¶¯¶Ë¿ÚÎª8888£¬ÎÄ¼şÀ´×ÔE:/github/spring-cloud-config-repo£¬ÒÔÉÏÈı¸öÎÄ¼ş·ÅÔÚ´ËÄ¿Â¼ÏÂ
 
-####3.2Ô¶³ÌGit²Ö¿â
+æŒ‡å®šäº†serverç«¯å¯åŠ¨ç«¯å£ä¸º8888ï¼Œæ–‡ä»¶æ¥è‡ªE:/github/spring-cloud-config-repoï¼Œä»¥ä¸Šä¸‰ä¸ªæ–‡ä»¶æ”¾åœ¨æ­¤ç›®å½•ä¸‹
+
+#### 3.2è¿œç¨‹Gitä»“åº“
 
 ```
 spring.application.name=config-server
@@ -47,9 +56,10 @@ spring.profiles.active=git
 spring.cloud.config.server.git.uri=https://github.com/ksfzhaohui/spring-cloud-config-repo
 spring.cloud.config.server.git.default-label=master
 ```
-spring.profiles.activeÄ¬ÈÏÖµÊÇgit£¬git.uriÖ¸¶¨µØÖ·£¬git²Ö¿âdefault-labelÄ¬ÈÏÖµÊÇmaster£»
 
-####3.3Ô¶³Ìsvn²Ö¿â
+spring.profiles.activeé»˜è®¤å€¼æ˜¯gitï¼Œgit.uriæŒ‡å®šåœ°å€ï¼Œgitä»“åº“default-labelé»˜è®¤å€¼æ˜¯masterï¼›
+
+#### 3.3è¿œç¨‹svnä»“åº“
 
 ```
 spring.profiles.active=subversion
@@ -58,9 +68,10 @@ spring.cloud.config.server.svn.username=root
 spring.cloud.config.server.svn.password=root
 spring.cloud.config.server.svn.default-label=
 ```
-ÅäÖÃÁËsvnµÄÓÃ»§ÃûºÍÃÜÂë£¬svn²Ö¿âdefault-labelÄ¬ÈÏÖµÊÇtrunk£¬ÒòÎª´Ë´¦×Ô½¨µÄsvn·şÎñÆ÷default-labelÎª¿Õ£¬ËùÒÔÉèÖÃÎª¿ÕÖµ¼´¿É£»
 
-###4.×¼±¸Æô¶¯Àà
+é…ç½®äº†svnçš„ç”¨æˆ·åå’Œå¯†ç ï¼Œsvnä»“åº“default-labelé»˜è®¤å€¼æ˜¯trunkï¼Œå› ä¸ºæ­¤å¤„è‡ªå»ºçš„svnæœåŠ¡å™¨default-labelä¸ºç©ºï¼Œæ‰€ä»¥è®¾ç½®ä¸ºç©ºå€¼å³å¯ï¼›
+
+### 4.å‡†å¤‡å¯åŠ¨ç±»
 
 ```
 @SpringBootApplication
@@ -71,10 +82,12 @@ public class ConfigServer {
     }
 }
 ```
-@EnableConfigServerÆô¶¯ÅäÖÃ·şÎñÆ÷£»
 
-###5.²âÊÔ
-²»¹ÜÊ¹ÓÃÒÔÉÏµÄÄÄÖÖ·½Ê½ÅäÖÃ£¬¶¼¿ÉÒÔÍ¨¹ıÊ¹ÓÃhttpµÄ·½Ê½·ÃÎÊ£¬http¿ÉÒÔÓĞÒÔÏÂ¼¸ÖÖ·½Ê½ÇëÇó×ÊÔ´£º
+@EnableConfigServerå¯åŠ¨é…ç½®æœåŠ¡å™¨ï¼›
+
+### 5.æµ‹è¯•
+
+ä¸ç®¡ä½¿ç”¨ä»¥ä¸Šçš„å“ªç§æ–¹å¼é…ç½®ï¼Œéƒ½å¯ä»¥é€šè¿‡ä½¿ç”¨httpçš„æ–¹å¼è®¿é—®ï¼Œhttpå¯ä»¥æœ‰ä»¥ä¸‹å‡ ç§æ–¹å¼è¯·æ±‚èµ„æºï¼š
 
 ```
 /{application}/{profile}[/{label}]
@@ -83,38 +96,44 @@ public class ConfigServer {
 /{application}-{profile}.properties
 /{label}/{application}-{profile}.properties
 ```
-application±¾ÊµÀıÖĞ¶ÔÓ¦config£»profile±íÊ¾Ê¹ÓÃÄÄÖÖ»·¾³µÄÅäÖÃÎÄ¼ş£¬ÕâÀï¿ÉÒÔÊÇdev£¬test£¬pro£»label¿ÉÑ¡µÄ±êÇ©£¬git²Ö¿âÄ¬ÈÏÖµmaster£¬svn²Ö¿âÄ¬ÈÏÖµÊÇtrunk£»
 
-5.1ÇëÇóhttp://localhost:8888/config/dev/master£¬½á¹ûÈçÏÂ£º
+applicationæœ¬å®ä¾‹ä¸­å¯¹åº”configï¼›profileè¡¨ç¤ºä½¿ç”¨å“ªç§ç¯å¢ƒçš„é…ç½®æ–‡ä»¶ï¼Œè¿™é‡Œå¯ä»¥æ˜¯devï¼Œtestï¼Œproï¼›labelå¯é€‰çš„æ ‡ç­¾ï¼Œgitä»“åº“é»˜è®¤å€¼masterï¼Œsvnä»“åº“é»˜è®¤å€¼æ˜¯trunkï¼›
+
+5.1è¯·æ±‚[http://localhost](http://localhost/):8888/config/dev/masterï¼Œç»“æœå¦‚ä¸‹ï¼š
 
 ```
 {"name":"config","profiles":["dev"],"label":"master","version":"e9884489051c3b962840ac0a710f0f949a82d0ea","state":null,"propertySources":[{"name":"https://github.com/ksfzhaohui/spring-cloud-config-repo/config-dev.properties","source":{"foo":"hello dev"}}]}
 ```
-·µ»Ø½á¹û°üº¬ÁËÏêÏ¸µÄĞÅÏ¢£¬×îºóµÄsourceÀïÃæÊÇÅäÖÃÎÄ¼şÄÚÈİ£»
 
-5.2ÇëÇóhttp://localhost:8888/config-dev.yml£¬½á¹ûÈçÏÂ£º
+è¿”å›ç»“æœåŒ…å«äº†è¯¦ç»†çš„ä¿¡æ¯ï¼Œæœ€åçš„sourceé‡Œé¢æ˜¯é…ç½®æ–‡ä»¶å†…å®¹ï¼›
+
+5.2è¯·æ±‚[http://localhost](http://localhost/):8888/config-dev.ymlï¼Œç»“æœå¦‚ä¸‹ï¼š
 
 ```
 foo: hello dev
 ```
-´ËÖÖ·½Ê½·ÃÎÊ½öÏÔÊ¾ÅäÖÃÎÄ¼şÄÚÈİ£¬Í¬Ñùpropertiesºó×ºµÄÒ²½öÏÔÊ¾ÅäÖÃÎÄ¼şÄÚÈİ£¬Ö»ÊÇÏÔÊ¾µÄ¸ñÊ½²»Ò»Ñù£»
 
-5.3¸üĞÂgitÉÏÎÄ¼şÄÚÈİ£¬ÇëÇóhttp://localhost:8888/config-dev.yml£¬½á¹ûÈçÏÂ£º
+æ­¤ç§æ–¹å¼è®¿é—®ä»…æ˜¾ç¤ºé…ç½®æ–‡ä»¶å†…å®¹ï¼ŒåŒæ ·propertiesåç¼€çš„ä¹Ÿä»…æ˜¾ç¤ºé…ç½®æ–‡ä»¶å†…å®¹ï¼Œåªæ˜¯æ˜¾ç¤ºçš„æ ¼å¼ä¸ä¸€æ ·ï¼›
+
+5.3æ›´æ–°gitä¸Šæ–‡ä»¶å†…å®¹ï¼Œè¯·æ±‚[http://localhost](http://localhost/):8888/config-dev.ymlï¼Œç»“æœå¦‚ä¸‹ï¼š
 
 ```
 foo: hello dev update
 ```
-»ñÈ¡µ½ÁË×îĞÂµÄÄÚÈİ£¬ÆäÊµÃ¿´ÎÔÚÇëÇóµÄÊ±ºò¶¼»áÈ¥Ô¶³Ì²Ö¿âÖĞ¸üĞÂÒ»ÏÂÊı¾İ£¬ÈÕÖ¾ÈçÏÂ£º
+
+è·å–åˆ°äº†æœ€æ–°çš„å†…å®¹ï¼Œå…¶å®æ¯æ¬¡åœ¨è¯·æ±‚çš„æ—¶å€™éƒ½ä¼šå»è¿œç¨‹ä»“åº“ä¸­æ›´æ–°ä¸€ä¸‹æ•°æ®ï¼Œæ—¥å¿—å¦‚ä¸‹ï¼š
 
 ```
 2018-07-13 09:43:07.606  INFO 14040 --- [nio-8888-exec-7] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@34107ea3: startup date [Fri Jul 13 09:43:07 CST 2018]; root of context hierarchy
 2018-07-13 09:43:07.610  INFO 14040 --- [nio-8888-exec-7] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/C:/Users/HUIZHA~1.CFS/AppData/Local/Temp/config-repo-1042810186024067185/config-dev.properties
 2018-07-13 09:43:07.611  INFO 14040 --- [nio-8888-exec-7] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@34107ea3: startup date [Fri Jul 13 09:43:07 CST 2018]; root of context hierarchy
 ```
-°ÑÊı¾İ¸üĞÂµ½±¾µØµÄTempÂ·¾¶ÏÂ£»
 
-##**Config-Client¶Ë**
-###1.Config-ClientÒÀÀµ
+æŠŠæ•°æ®æ›´æ–°åˆ°æœ¬åœ°çš„Tempè·¯å¾„ä¸‹ï¼›
+
+## **Config-Clientç«¯**
+
+### 1.Config-Clientä¾èµ–
 
 ```
 <dependency>
@@ -129,8 +148,9 @@ foo: hello dev update
 </dependency>
 ```
 
-###2.Æô¶¯ÅäÖÃÎÄ¼ş
-ÔÚÅäÖÃÎÄ¼şresources/bootstrap.propertiesÖĞ×öÈçÏÂÅäÖÃ£º
+### 2.å¯åŠ¨é…ç½®æ–‡ä»¶
+
+åœ¨é…ç½®æ–‡ä»¶resources/bootstrap.propertiesä¸­åšå¦‚ä¸‹é…ç½®ï¼š
 
 ```
 spring.application.name=config
@@ -139,13 +159,14 @@ spring.cloud.config.profile=test
 spring.cloud.config.uri= http://localhost:8888/
 server.port=8889
 ```
-spring.application.name£º¶ÔÓ¦{application}£¬±¾ÊµÀıÖĞÊÇconfig£»
-spring.cloud.config.label£º¶ÔÓ¦{label}£¬Ö¸¶¨server¶ËÅäÖÃµÄ·ÖÖ§£¬´Ë´¦Ìîmaster¼´¿É£»
-spring.cloud.config.profile£º¶ÔÓ¦{profile}£¬Ö¸¶¨clientµ±Ç°µÄ»·¾³£¬¿ÉÑ¡Öµ£ºdev£¬test£¬pro£»
-spring.cloud.config.uri£ºserver¶ËµØÖ·£»
-server.port£ºclientÆô¶¯¶Ë¿Ú£»
 
-###3.×¼±¸²âÊÔÀà
+spring.application.nameï¼šå¯¹åº”{application}ï¼Œæœ¬å®ä¾‹ä¸­æ˜¯configï¼›  
+spring.cloud.config.labelï¼šå¯¹åº”{label}ï¼ŒæŒ‡å®šserverç«¯é…ç½®çš„åˆ†æ”¯ï¼Œæ­¤å¤„å¡«masterå³å¯ï¼›  
+spring.cloud.config.profileï¼šå¯¹åº”{profile}ï¼ŒæŒ‡å®šclientå½“å‰çš„ç¯å¢ƒï¼Œå¯é€‰å€¼ï¼šdevï¼Œtestï¼Œproï¼›  
+spring.cloud.config.uriï¼šserverç«¯åœ°å€ï¼›  
+server.portï¼šclientå¯åŠ¨ç«¯å£ï¼›
+
+### 3.å‡†å¤‡æµ‹è¯•ç±»
 
 ```
 @SpringBootApplication
@@ -154,49 +175,57 @@ public class ConfigClient {
         SpringApplication.run(ConfigClient.class, args);
     }
 }
- 
+
 @RestController
 public class HelloController {
- 
+
     @Value("${foo}")
     String foo;
- 
+
     @RequestMapping(value = "/hello")
     public String hello() {
         return foo;
     }
- 
+
 }
 ```
-·ÃÎÊµØÖ·£ºhttp://localhost:8889/hello£¬·µ»Ø½á¹ûÈçÏÂ£º
+
+è®¿é—®åœ°å€ï¼š[http://localhost](http://localhost/):8889/helloï¼Œè¿”å›ç»“æœå¦‚ä¸‹ï¼š
 
 ```
 hello test
 ```
-##**¹ØÓÚSpring-Cloud-ConfigÅäÖÃµÄ¸üĞÂ**
-###1.Client¶Ë³õÊ¼»¯ÅäÖÃÎÄ¼ş
-Client¶ËÔÚÆô¶¯µÄÊ±ºò£¬¿ÉÒÔ·¢ÏÖServer¶ËÓĞÀ­È¡ÅäÖÃÎÄ¼şµÄÈÕÖ¾£º
+
+## **å…³äºSpring-Cloud-Configé…ç½®çš„æ›´æ–°**
+
+### 1.Clientç«¯åˆå§‹åŒ–é…ç½®æ–‡ä»¶
+
+Clientç«¯åœ¨å¯åŠ¨çš„æ—¶å€™ï¼Œå¯ä»¥å‘ç°Serverç«¯æœ‰æ‹‰å–é…ç½®æ–‡ä»¶çš„æ—¥å¿—ï¼š
 
 ```
 2018-07-13 12:47:36.330  INFO 13884 --- [nio-8888-exec-1] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@1917a8ad: startup date [Fri Jul 13 12:47:36 CST 2018]; root of context hierarchy
 2018-07-13 12:47:36.399  INFO 13884 --- [nio-8888-exec-1] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/C:/Users/HUIZHA~1.CFS/AppData/Local/Temp/config-repo-1261377317774171312/config-test.properties
 2018-07-13 12:47:36.400  INFO 13884 --- [nio-8888-exec-1] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@1917a8ad: startup date [Fri Jul 13 12:47:36 CST 2018]; root of context hierarchy
 ```
-###2.Server¶ËÊı¾İ¸üĞÂ£¬ClientÈçºÎ¸üĞÂ
-¸üĞÂgitÖĞconfig-test.properties£¬ÇëÇóhttp://localhost:8888/config-test.yml£¬½á¹ûÈçÏÂ£º
+
+### 2.Serverç«¯æ•°æ®æ›´æ–°ï¼ŒClientå¦‚ä½•æ›´æ–°
+
+æ›´æ–°gitä¸­config-test.propertiesï¼Œè¯·æ±‚[http://localhost](http://localhost/):8888/config-test.ymlï¼Œç»“æœå¦‚ä¸‹ï¼š
 
 ```
 foo: hello test update
 ```
-ClientÇëÇóhttp://localhost:8889/hello£¬½á¹ûÈçÏÂ£º
+
+Clientè¯·æ±‚[http://localhost](http://localhost/):8889/helloï¼Œç»“æœå¦‚ä¸‹ï¼š
 
 ```
 hello test
 ```
-¿ÉÒÔ·¢ÏÖServer¶ËÒÑ¾­¸üĞÂ£¬µ«ÊÇClient¶ËÃ»ÓĞ»ñÈ¡µ½×îĞÂµÄÊı¾İ£¬»¹ÊÇÊ¹ÓÃµÄ»º´æµÄÀÏÊı¾İ£»
-Spring-Cloud-ConfigÌá¹©ÁË¶àÖÖË¢ĞÂ»úÖÆ£¬ÏÂÃæ¿´Ò»ÏÂ×î¼òµ¥ÊÖ¶¯Ë¢ĞÂ£º
 
-####2.1ÒıÈëÒÀÀµ
+å¯ä»¥å‘ç°Serverç«¯å·²ç»æ›´æ–°ï¼Œä½†æ˜¯Clientç«¯æ²¡æœ‰è·å–åˆ°æœ€æ–°çš„æ•°æ®ï¼Œè¿˜æ˜¯ä½¿ç”¨çš„ç¼“å­˜çš„è€æ•°æ®ï¼›  
+Spring-Cloud-Configæä¾›äº†å¤šç§åˆ·æ–°æœºåˆ¶ï¼Œä¸‹é¢çœ‹ä¸€ä¸‹æœ€ç®€å•æ‰‹åŠ¨åˆ·æ–°ï¼š
+
+#### 2.1å¼•å…¥ä¾èµ–
 
 ```
 <dependency>
@@ -205,78 +234,95 @@ Spring-Cloud-ConfigÌá¹©ÁË¶àÖÖË¢ĞÂ»úÖÆ£¬ÏÂÃæ¿´Ò»ÏÂ×î¼òµ¥ÊÖ¶¯Ë¢ĞÂ£º
     <version>2.0.0.RELEASE</version>
 </dependency>
 ```
-####2.2±©Â¶È«²¿endpoints
-ÔÚbootstrap.propertiesÖĞÌí¼Ó
+
+#### 2.2æš´éœ²å…¨éƒ¨endpoints
+
+åœ¨bootstrap.propertiesä¸­æ·»åŠ 
 
 ```
 management.endpoints.web.exposure.include=*
 ```
-####2.3.ĞŞ¸ÄHelloController
+
+#### 2.3.ä¿®æ”¹HelloController
 
 ```
 @RefreshScope
 @RestController
 public class HelloController {
- 
+
     @Value("${foo}")
     String foo;
- 
+
     @RequestMapping(value = "/hello")
     public String hello() {
         return foo;
     }
 }
 ```
-@RefreshScopeÔÚÊÖ¶¯Ö´ĞĞË¢ĞÂµÄÊ±ºò»á¸üĞÂ´Ë±äÁ¿
 
-####2.4.Æô¶¯
-¹Û²ìÆô¶¯ÈÕÖ¾£¬ÆäÖĞÓĞÒ»ÌõÓ³ÉäÈçÏÂ£º
+@RefreshScopeåœ¨æ‰‹åŠ¨æ‰§è¡Œåˆ·æ–°çš„æ—¶å€™ä¼šæ›´æ–°æ­¤å˜é‡
 
-```
-2018-07-13 15:54:16.959  INFO 11372 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/refresh],methods=[POST],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
-```
-/actuator/refreshÌá¹©ÁËÊÖ¶¯Ë¢ĞÂµÄ¹¦ÄÜ£¬²¢ÇÒ±ØĞëÊ¹ÓÃPOST·½Ê½£»
+#### 2.4.å¯åŠ¨
 
-####2.5.²âÊÔ
-·ÃÎÊµØÖ·£ºhttp://localhost:8889/hello£¬·µ»Ø½á¹ûÈçÏÂ£º
+è§‚å¯Ÿå¯åŠ¨æ—¥å¿—ï¼Œå…¶ä¸­æœ‰ä¸€æ¡æ˜ å°„å¦‚ä¸‹ï¼š
 
 ```
-hello test
+2018-07-13 15:54:16.959 INFO 11372 --- [ main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/refresh],methods=[POST],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Objectorg.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
 ```
-¸üĞÂgitÉÏµÄÅäÖÃÎÄ¼ş£¬ÅäÖÃÖµÎªfoo=hello test update£»
 
-·ÃÎÊµØÖ·£ºhttp://localhost:8889/hello£¬·µ»Ø½á¹ûÈçÏÂ£º
+/actuator/refreshæä¾›äº†æ‰‹åŠ¨åˆ·æ–°çš„åŠŸèƒ½ï¼Œå¹¶ä¸”å¿…é¡»ä½¿ç”¨POSTæ–¹å¼ï¼›
+
+#### 2.5.æµ‹è¯•
+
+è®¿é—®åœ°å€ï¼š[http://localhost](http://localhost/):8889/helloï¼Œè¿”å›ç»“æœå¦‚ä¸‹ï¼š
 
 ```
 hello test
 ```
-Ö´ĞĞÊÖ¶¯Ë¢ĞÂ²Ù×÷£º
+
+æ›´æ–°gitä¸Šçš„é…ç½®æ–‡ä»¶ï¼Œé…ç½®å€¼ä¸ºfoo=hello test updateï¼›
+
+è®¿é—®åœ°å€ï¼š[http://localhost](http://localhost/):8889/helloï¼Œè¿”å›ç»“æœå¦‚ä¸‹ï¼š
+
+```
+hello test
+```
+
+æ‰§è¡Œæ‰‹åŠ¨åˆ·æ–°æ“ä½œï¼š
 
 ```
 C:\curl-7.61.0\I386>curl -X POST http://localhost:8889/actuator/refresh
 ["config.client.version","foo"]
 ```
-·ÃÎÊµØÖ·£ºhttp://localhost:8889/hello£¬·µ»Ø½á¹ûÈçÏÂ£º
+
+è®¿é—®åœ°å€ï¼š[http://localhost](http://localhost/):8889/helloï¼Œè¿”å›ç»“æœå¦‚ä¸‹ï¼š
 
 ```
 hello test update
 ```
 
-###3.ÈçºÎ×Ô¶¯¸üĞÂ
-ÔÚÉú²ú»·¾³ÏÂ²»¿ÉÄÜÃ¿´Î¶¼È¥ÊÖ¶¯´¥·¢refresh£¬githubÌá¹©ÁËwebhook¹¦ÄÜ£¬µ±Ä³¸öÊÂ¼ş·¢ÉúÊ±£¬Í¨¹ı·¢ËÍhttpµÄ·½Ê½¸æËß½ÓÊÕ·½£¬ÕâÑù¾Í¿ÉÒÔÔÚ½ÓÊÕµ½ÊÂ¼şµÄÊ±ºò´¥·¢refreshÇëÇó£»
+### 3.å¦‚ä½•è‡ªåŠ¨æ›´æ–°
 
-##**¼¸¸ö´ı·ÖÎöÎÊÌâ**
-###1.¶à¸öClient½ÚµãÈçºÎ¸üĞÂ
-Õı³£Çé¿öÏÂClient»áÓĞºÜ¶à¸ö½Úµã£¬¶øÇÒ½Úµã»á³öÏÖÉÏÏßºÍÏÂÏß£¬ÈçºÎÍ¬Ê±Í¨ÖªÃ¿¸ö½Úµã£¬Spring-Cloud-ConfigÌá¹©ÁËSpring Cloud BusÀ´ÅúÁ¿´¦Àí£»
+åœ¨ç”Ÿäº§ç¯å¢ƒä¸‹ä¸å¯èƒ½æ¯æ¬¡éƒ½å»æ‰‹åŠ¨è§¦å‘refreshï¼Œgithubæä¾›äº†webhookåŠŸèƒ½ï¼Œå½“æŸä¸ªäº‹ä»¶å‘ç”Ÿæ—¶ï¼Œé€šè¿‡å‘é€httpçš„æ–¹å¼å‘Šè¯‰æ¥æ”¶æ–¹ï¼Œè¿™æ ·å°±å¯ä»¥åœ¨æ¥æ”¶åˆ°äº‹ä»¶çš„æ—¶å€™è§¦å‘refreshè¯·æ±‚ï¼›
 
-###2.¸üĞÂ»úÖÆ
-ÔÚÖ´ĞĞrefreshµÄÊ±ºò£¬Ö»»á°Ñ±ä¶¯µÄ²ÎÊı·¢ËÍ¸øClient¶Ë£¬Ã»ÓĞ±ä¶¯µÄ²»»á·¢ËÍ£¬½ÚÔ¼ÁËÁ÷Á¿£»µ«ÊÇÈç¹ûÅäÖÃÎÄ¼ş±»¶à¸ö²»Í¬µÄClientÊ¹ÓÃ£¬ÊÇ·ñ»á³öÏÖ²»Ïà¸ÉµÄ²ÎÊı»á·¢ËÍ¸øÃ¿¸öClient£»
+## **å‡ ä¸ªå¾…åˆ†æé—®é¢˜**
 
-###3.¶àÅäÖÃÎÄ¼şµÄÖ§³Ö
-Server¿ÉÒÔÍ¬Ê±¼ÓÔØ¶à¸öÅäÖÃÎÄ¼ş£¬ClientÒ²¿ÉÒÔÖ§³Ö¶à¸öÅäÖÃÎÄ¼ş£»
+### 1.å¤šä¸ªClientèŠ‚ç‚¹å¦‚ä½•æ›´æ–°
 
-###4.Server¶ËÈçºÎ±£Ö¤Êı¾İµÄ¿É¿¿ĞÔ
-Server¶Ë¼¯ÖĞ¹ÜÀíÅäÖÃ£¬ËùÒÔ·şÎñµÄ¿É¿¿ĞÔºÜÖØÒª£»
+æ­£å¸¸æƒ…å†µä¸‹Clientä¼šæœ‰å¾ˆå¤šä¸ªèŠ‚ç‚¹ï¼Œè€Œä¸”èŠ‚ç‚¹ä¼šå‡ºç°ä¸Šçº¿å’Œä¸‹çº¿ï¼Œå¦‚ä½•åŒæ—¶é€šçŸ¥æ¯ä¸ªèŠ‚ç‚¹ï¼ŒSpring-Cloud-Configæä¾›äº†Spring Cloud Busæ¥æ‰¹é‡å¤„ç†ï¼›
 
-##**×Ü½á**
-±¾ÎÄ·Ö±ğ´ÓServer¶ËºÍClient¶Ë½áºÏÊµÀıÀ´½éÉÜSpring-Cloud-ConfigÈçºÎÊ¹ÓÃ£¬È»ºó´óÌå½éÉÜÁËÈçºÎÊ¹ÓÃ¸üĞÂ¹¦ÄÜ£¬×îºóÁôÁË¼¸¸ö´ı·ÖÎöµÄÎÊÌâ£¬ºóĞø½øĞĞ·ÖÎö¡£
+### 2.æ›´æ–°æœºåˆ¶
+
+åœ¨æ‰§è¡Œrefreshçš„æ—¶å€™ï¼Œåªä¼šæŠŠå˜åŠ¨çš„å‚æ•°å‘é€ç»™Clientç«¯ï¼Œæ²¡æœ‰å˜åŠ¨çš„ä¸ä¼šå‘é€ï¼ŒèŠ‚çº¦äº†æµé‡ï¼›ä½†æ˜¯å¦‚æœé…ç½®æ–‡ä»¶è¢«å¤šä¸ªä¸åŒçš„Clientä½¿ç”¨ï¼Œæ˜¯å¦ä¼šå‡ºç°ä¸ç›¸å¹²çš„å‚æ•°ä¼šå‘é€ç»™æ¯ä¸ªClientï¼›
+
+### 3.å¤šé…ç½®æ–‡ä»¶çš„æ”¯æŒ
+
+Serverå¯ä»¥åŒæ—¶åŠ è½½å¤šä¸ªé…ç½®æ–‡ä»¶ï¼ŒClientä¹Ÿå¯ä»¥æ”¯æŒå¤šä¸ªé…ç½®æ–‡ä»¶ï¼›
+
+### 4.Serverç«¯å¦‚ä½•ä¿è¯æ•°æ®çš„å¯é æ€§
+
+Serverç«¯é›†ä¸­ç®¡ç†é…ç½®ï¼Œæ‰€ä»¥æœåŠ¡çš„å¯é æ€§å¾ˆé‡è¦ï¼›
+
+## **æ€»ç»“**
+
+æœ¬æ–‡åˆ†åˆ«ä»Serverç«¯å’ŒClientç«¯ç»“åˆå®ä¾‹æ¥ä»‹ç»Spring-Cloud-Configå¦‚ä½•ä½¿ç”¨ï¼Œç„¶åå¤§ä½“ä»‹ç»äº†å¦‚ä½•ä½¿ç”¨æ›´æ–°åŠŸèƒ½ï¼Œæœ€åç•™äº†å‡ ä¸ªå¾…åˆ†æçš„é—®é¢˜ï¼Œåç»­è¿›è¡Œåˆ†æã€‚
