@@ -1,3 +1,4 @@
+# 标题：Spring-Cloud-Config快速开始
 ## **Spring-Cloud-Config简介**
 
 Spring-Cloud-Config是Sping-Cloud下用于分布式配置管理的组件，分成了两个角色Config-Server和Config-Client；Config-Server端集中式存储/管理配置文件，并对外提供接口方便Config-Client访问，接口使用HTTP的方式对外提供访问；Config-Client通过接口获取配置文件，然后可以在应用中使用；Config-Server存储/管理的配置文件可以来自本地文件，远程Git仓库以及远程Svn仓库；
