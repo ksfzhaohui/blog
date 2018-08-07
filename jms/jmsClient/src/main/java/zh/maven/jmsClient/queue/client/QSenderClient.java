@@ -1,4 +1,4 @@
-package zh.maven.jmsClient.queue;
+package zh.maven.jmsClient.queue.client;
 
 import javax.jms.Queue;
 import javax.jms.QueueConnection;
@@ -10,7 +10,7 @@ import javax.jms.TextMessage;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 
-public class QSender {
+public class QSenderClient {
 
 	private QueueConnectionFactory factory;
 	private QueueConnection qConnection;
@@ -18,13 +18,13 @@ public class QSender {
 	private Queue queue;
 	private QueueSender qSender;
 
-	public QSender() {
+	public QSenderClient() {
 		try {
 			factory = new ActiveMQConnectionFactory("tcp://localhost:61616");
 			qConnection = factory.createQueueConnection();
 			qConnection.start();
 
-			qSession = qConnection.createQueueSession(false, Session.AUTO_ACKNOWLEDGE);
+			qSession = qConnection.createQueueSession(false, Session.CLIENT_ACKNOWLEDGE);
 			queue = qSession.createQueue("test");
 			qSender = qSession.createSender(queue);
 		} catch (Exception e) {
@@ -37,6 +37,8 @@ public class QSender {
 		try {
 			TextMessage message = qSession.createTextMessage(text);
 			qSender.send(message);
+			for (int i = 0; i < 10; i++) {
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.err.println("发送消息失败，生产者做重发处理");
@@ -57,7 +59,7 @@ public class QSender {
 	}
 
 	public static void main(String[] args) throws Exception {
-		QSender sender = new QSender();
+		QSenderClient sender = new QSenderClient();
 		String message = "test消息";
 		System.out.println("准备发送消息：" + message);
 		sender.sendMessage(message);
