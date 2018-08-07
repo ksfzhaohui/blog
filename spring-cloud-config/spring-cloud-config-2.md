@@ -1,3 +1,4 @@
+# 标题：Spring-Cloud-Config消息总线和高可用
 ## **前言**
 
 上文中简单的介绍了Spring-Cloud-Config如何使用，如何手动更新配置文件，并且在文末提出了几个疑问，其中包括多个Client节点如何更新，Server端如何保证高可用性等；本文将重点介绍通过使用Spring Cloud Bus来批量更新客户端，以及Server如何保证高可用；
