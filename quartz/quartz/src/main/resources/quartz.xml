@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd  
+                            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	<bean id="firstTask"
+		class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="jobClass" value="zh.maven.SQuartz.task.FirstTask" />
+		<property name="jobDataMap">
+			<map>
+				<entry key="firstService" value-ref="firstService" />
+			</map>
+		</property>
+	</bean>
+	<bean id="firstSimpleTask"
+		class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="jobClass" value="zh.maven.SQuartz.task.SimpleFirstTask" />
+		<property name="jobDataMap">
+			<map>
+				<entry key="firstService" value-ref="simpleFirstService" />
+			</map>
+		</property>
+	</bean>
+	<bean id="firstCalendarTask"
+		class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="jobClass" value="zh.maven.SQuartz.task.CalendarFirstTask" />
+		<property name="jobDataMap">
+			<map>
+				<entry key="firstService" value-ref="calendarFirstService" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="firstService" class="zh.maven.SQuartz.service.FirstService"></bean>
+	<bean id="simpleFirstService" class="zh.maven.SQuartz.service.SimpleFirstService"></bean>
+	<bean id="calendarFirstService" class="zh.maven.SQuartz.service.CalendarFirstService"></bean>
+
+	<bean id="firstCalendar" class="org.quartz.impl.calendar.CronCalendar">
+		<constructor-arg value="0/5 * * ? * *"></constructor-arg>
+	</bean>
+
+	<bean id="firstCronTrigger"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="firstTask" />
+		<property name="cronExpression" value="0/6 * * ? * *" />
+		<property name="group" value="firstCronGroup"></property>
+		<!-- <property name="calendarName" value="firstCalendar"></property> -->
+	</bean>
+	<bean id="firstSimpleTrigger"
+		class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
+		<property name="jobDetail" ref="firstSimpleTask" />
+		<!-- <property name="startDelay" value="1000" /> -->
+		<property name="repeatInterval" value="2000" />
+		<property name="repeatCount" value="2"></property>
+		<property name="group" value="firstSimpleGroup"></property>
+	</bean>
+
+	<bean id="calendarTriggerKey" class="org.quartz.TriggerKey">
+		<constructor-arg value="calendarTriggerKey"></constructor-arg>
+	</bean>
+	<bean id="intervalUnit"
+		class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
+		<property name="staticField" value="org.quartz.DateBuilder.IntervalUnit.SECOND" />
+	</bean>
+	<bean id="firstCalendarTrigger" class="org.quartz.impl.triggers.CalendarIntervalTriggerImpl">
+		<property name="jobDataMap">
+			<map>
+				<entry key="jobDetail" value-ref="firstCalendarTask"></entry>
+			</map>
+		</property>
+		<property name="key" ref="calendarTriggerKey"></property>
+		<property name="repeatInterval" value="1" />
+		<!-- <property name="repeatIntervalUnit" ref="intervalUnit"></property> -->
+		<property name="group" value="firstCalendarGroup"></property>
+	</bean>
+
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="com.mysql.jdbc.Driver" />
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/quartz" />
+		<property name="user" value="root" />
+		<property name="password" value="root" />
+	</bean>
+
+	<bean id="scheduler"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="schedulerName" value="myScheduler"></property>
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:quartz.properties" />
+		<property name="triggers">
+			<list>
+				<!-- <ref bean="firstSimpleTrigger" /> -->
+				<!-- <ref bean="firstCalendarTrigger" /> -->
+				<ref bean="firstCronTrigger" />
+			</list>
+		</property>
+		<!-- <property name="calendars">
+			<map>
+				<entry key="firstCalendar" value-ref="firstCalendar"></entry>
+			</map>
+		</property> -->
+	</bean>
+
+
+</beans>
