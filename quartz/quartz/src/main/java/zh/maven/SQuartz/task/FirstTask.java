@@ -1,11 +1,13 @@
 package zh.maven.SQuartz.task;
 
+import org.quartz.DisallowConcurrentExecution;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 import org.springframework.scheduling.quartz.QuartzJobBean;
 
 import zh.maven.SQuartz.service.FirstService;
 
+@DisallowConcurrentExecution
 public class FirstTask extends QuartzJobBean {
 
 	private FirstService firstService;

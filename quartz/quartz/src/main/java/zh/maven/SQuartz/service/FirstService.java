@@ -11,7 +11,7 @@ public class FirstService implements Serializable {
 	public void service() {
 		System.out.println(new SimpleDateFormat("YYYYMMdd HH:mm:ss").format(new Date()) + "---start FirstService");
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(6000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

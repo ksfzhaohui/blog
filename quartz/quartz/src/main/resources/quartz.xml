@@ -12,6 +12,15 @@
 			</map>
 		</property>
 	</bean>
+	<bean id="secondTask"
+		class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="jobClass" value="zh.maven.SQuartz.task.SecondTask" />
+		<property name="jobDataMap">
+			<map>
+				<entry key="secondService" value-ref="secondService" />
+			</map>
+		</property>
+	</bean>
 	<bean id="firstSimpleTask"
 		class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
 		<property name="jobClass" value="zh.maven.SQuartz.task.SimpleFirstTask" />
@@ -32,6 +41,7 @@
 	</bean>
 
 	<bean id="firstService" class="zh.maven.SQuartz.service.FirstService"></bean>
+	<bean id="secondService" class="zh.maven.SQuartz.service.SecondService"></bean>
 	<bean id="simpleFirstService" class="zh.maven.SQuartz.service.SimpleFirstService"></bean>
 	<bean id="calendarFirstService" class="zh.maven.SQuartz.service.CalendarFirstService"></bean>
 
@@ -42,10 +52,17 @@
 	<bean id="firstCronTrigger"
 		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
 		<property name="jobDetail" ref="firstTask" />
-		<property name="cronExpression" value="0/6 * * ? * *" />
+		<property name="cronExpression" value="0/5 * * ? * *" />
 		<property name="group" value="firstCronGroup"></property>
 		<!-- <property name="calendarName" value="firstCalendar"></property> -->
 	</bean>
+	<bean id="secondCronTrigger"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="secondTask" />
+		<property name="cronExpression" value="0/6 * * ? * *" />
+		<property name="group" value="secondCronGroup"></property>
+	</bean>
+	
 	<bean id="firstSimpleTrigger"
 		class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
 		<property name="jobDetail" ref="firstSimpleTask" />
@@ -92,6 +109,7 @@
 				<!-- <ref bean="firstSimpleTrigger" /> -->
 				<!-- <ref bean="firstCalendarTrigger" /> -->
 				<ref bean="firstCronTrigger" />
+				<!-- <ref bean="secondCronTrigger" /> -->
 			</list>
 		</property>
 		<!-- <property name="calendars">
