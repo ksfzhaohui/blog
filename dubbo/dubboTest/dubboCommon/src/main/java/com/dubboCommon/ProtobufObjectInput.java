@@ -81,7 +81,7 @@ public class ProtobufObjectInput implements ObjectInput {
 	}
 
 	@Override
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public <T> T readObject(Class<T> clazz) throws IOException {
 		try {
 			if (clazz == Map.class) {
@@ -94,13 +94,12 @@ public class ProtobufObjectInput implements ObjectInput {
 			ProtobufIOUtil.mergeFrom(buffer, obj, schema);
 			return obj;
 		} catch (Exception e) {
-			e.printStackTrace();
 			throw new IOException(e);
 		}
 	}
 
 	@Override
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public <T> T readObject(Class<T> clazz, Type type) throws IOException, ClassNotFoundException {
 		try {
 			Schema schema = RuntimeSchema.getSchema(clazz);
@@ -110,7 +109,6 @@ public class ProtobufObjectInput implements ObjectInput {
 			ProtobufIOUtil.mergeFrom(buffer, obj, schema);
 			return obj;
 		} catch (Exception e) {
-			e.printStackTrace();
 			throw new IOException(e);
 		}
 	}

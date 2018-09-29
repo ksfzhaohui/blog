@@ -70,6 +70,7 @@ public class ProtobufObjectOutput implements ObjectOutput {
 	}
 
 	@Override
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public void writeObject(Object v) throws IOException {
 		Class clazz = v.getClass();
 		Schema schema = RuntimeSchema.getSchema(clazz);
