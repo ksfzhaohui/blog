@@ -4,14 +4,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.Map;
 
 import com.alibaba.dubbo.common.serialize.ObjectInput;
-
-import io.protostuff.ProtobufIOUtil;
-import io.protostuff.Schema;
-import io.protostuff.runtime.RuntimeSchema;
 
 public class ProtobufObjectInput implements ObjectInput {
 
@@ -81,33 +75,23 @@ public class ProtobufObjectInput implements ObjectInput {
 	}
 
 	@Override
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public <T> T readObject(Class<T> clazz) throws IOException {
 		try {
-			if (clazz == Map.class) {
-				clazz = (Class<T>) HashMap.class;
-			}
-			Schema schema = RuntimeSchema.getSchema(clazz);
-			T obj = clazz.newInstance();
 			byte[] buffer = new byte[input.available()];
 			input.read(buffer);
-			ProtobufIOUtil.mergeFrom(buffer, obj, schema);
-			return obj;
+			return SerializationUtil.deserialize(buffer, clazz);
 		} catch (Exception e) {
 			throw new IOException(e);
 		}
+
 	}
 
 	@Override
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public <T> T readObject(Class<T> clazz, Type type) throws IOException, ClassNotFoundException {
+	public <T> T readObject(Class<T> clazz, Type type) throws IOException {
 		try {
-			Schema schema = RuntimeSchema.getSchema(clazz);
-			T obj = clazz.newInstance();
 			byte[] buffer = new byte[input.available()];
 			input.read(buffer);
-			ProtobufIOUtil.mergeFrom(buffer, obj, schema);
-			return obj;
+			return SerializationUtil.deserialize(buffer, clazz);
 		} catch (Exception e) {
 			throw new IOException(e);
 		}

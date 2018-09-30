@@ -6,11 +6,6 @@ import java.io.OutputStream;
 
 import com.alibaba.dubbo.common.serialize.ObjectOutput;
 
-import io.protostuff.LinkedBuffer;
-import io.protostuff.ProtobufIOUtil;
-import io.protostuff.Schema;
-import io.protostuff.runtime.RuntimeSchema;
-
 public class ProtobufObjectOutput implements ObjectOutput {
 
 	private ObjectOutputStream outputStream;
@@ -70,12 +65,8 @@ public class ProtobufObjectOutput implements ObjectOutput {
 	}
 
 	@Override
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public void writeObject(Object v) throws IOException {
-		Class clazz = v.getClass();
-		Schema schema = RuntimeSchema.getSchema(clazz);
-		LinkedBuffer buffer = LinkedBuffer.allocate(LinkedBuffer.DEFAULT_BUFFER_SIZE);
-		byte[] bytes = ProtobufIOUtil.toByteArray(v, schema, buffer);
+		byte[] bytes = SerializationUtil.serialize(v);
 		outputStream.write(bytes);
 		outputStream.flush();
 	}
