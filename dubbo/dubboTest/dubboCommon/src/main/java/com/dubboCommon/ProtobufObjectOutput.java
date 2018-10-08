@@ -67,7 +67,7 @@ public class ProtobufObjectOutput implements ObjectOutput {
 	@Override
 	public void writeObject(Object v) throws IOException {
 		byte[] bytes = SerializationUtil.serialize(v);
-		outputStream.write(bytes);
+		outputStream.writeObject(bytes);
 		outputStream.flush();
 	}
 

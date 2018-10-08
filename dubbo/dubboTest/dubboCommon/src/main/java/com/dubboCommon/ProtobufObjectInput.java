@@ -77,7 +77,7 @@ public class ProtobufObjectInput implements ObjectInput {
 	@Override
 	public <T> T readObject(Class<T> clazz) throws IOException {
 		try {
-			byte[] buffer = new byte[input.available()];
+			byte[] buffer = (byte[]) input.readObject();
 			input.read(buffer);
 			return SerializationUtil.deserialize(buffer, clazz);
 		} catch (Exception e) {
@@ -89,7 +89,7 @@ public class ProtobufObjectInput implements ObjectInput {
 	@Override
 	public <T> T readObject(Class<T> clazz, Type type) throws IOException {
 		try {
-			byte[] buffer = new byte[input.available()];
+			byte[] buffer = (byte[]) input.readObject();
 			input.read(buffer);
 			return SerializationUtil.deserialize(buffer, clazz);
 		} catch (Exception e) {
