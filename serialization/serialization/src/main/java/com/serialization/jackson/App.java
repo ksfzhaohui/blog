@@ -13,7 +13,7 @@ public class App {
 
 	public static void main(String[] args) throws IOException {
 		ObjectMapper mapper = new ObjectMapper();
-		mapper.enable(DeserializationFeature.USE_BIG_DECIMAL_FOR_FLOATS);
+//		mapper.enable(DeserializationFeature.USE_BIG_DECIMAL_FOR_FLOATS);
 
 		// SimpleModule desModule = new SimpleModule("testModule");
 		// desModule.addDeserializer(Bean2.class, new
