@@ -13,4 +13,11 @@
 		<dubbo:method name="syncSayHello" async="false" />
 		<dubbo:method name="asyncSayHello" async="true" />
 	</dubbo:reference>
+	<dubbo:reference id="demoService2" interface="com.dubboApi.DemoService" >
+		<dubbo:method name="syncSayHello" async="false" />
+		<dubbo:method name="asyncSayHello" async="true" />
+	</dubbo:reference>
+	
+	<dubbo:reference id="redis" interface="java.util.Map" url="redis://127.0.0.1:6379" />
+	
 </beans>  
