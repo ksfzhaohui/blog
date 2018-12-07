@@ -3,9 +3,9 @@ package com.java8.c2;
 public class Apple {
 
 	private String color;
-	private int weight;
+	private Integer weight;
 
-	public Apple(String color, int weight) {
+	public Apple(String color, Integer weight) {
 		super();
 		this.color = color;
 		this.weight = weight;
@@ -27,12 +27,17 @@ public class Apple {
 		this.color = color;
 	}
 
-	public int getWeight() {
+	public Integer getWeight() {
 		return weight;
 	}
 
-	public void setWeight(int weight) {
+	public void setWeight(Integer weight) {
 		this.weight = weight;
+	}
+
+	@Override
+	public String toString() {
+		return "Apple [color=" + color + ", weight=" + weight + "]";
 	}
 
 }
