@@ -9,7 +9,17 @@ public class LamdbaTest {
 	public static void main(String[] args) throws IOException {
 
 		System.out.println(processFile());
-		System.out.println(processFile((BufferedReader br) -> br.readLine()));
+		/**
+		 * 任何函数式接口都不允许抛出已检查异常(checked exception)；如果需要lamdba表达式来抛出异常 有两种方式：
+		 * 1.定义一个自己的函数式接口，并声明已检查异常 2.把lamdba包在一个try/catch中
+		 */
+		System.out.println(processFile((BufferedReader br) -> {
+			try {
+				return br.readLine();
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+		}));
 		System.out.println(processFile((BufferedReader br) -> br.readLine() + br.readLine()));
 
 	}
