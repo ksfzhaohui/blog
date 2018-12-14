@@ -5,6 +5,14 @@ public class Apple {
 	private String color;
 	private Integer weight;
 
+	public Apple() {
+
+	}
+
+	public Apple(Integer weight) {
+		this.weight = weight;
+	}
+
 	public Apple(String color, Integer weight) {
 		super();
 		this.color = color;
