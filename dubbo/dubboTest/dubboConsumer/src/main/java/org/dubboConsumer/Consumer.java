@@ -25,9 +25,10 @@ public class Consumer {
 		// System.out.println(demoService.sayHello(new TestBean("zhaohui", 99,
 		// "nanjing")));
 
-		Map<String, String> map = (Map<String, String>) context.getBean("redis");
-		map.put("haha", "vvv1");
-
-		System.out.println(map.get("haha"));
+		// Map<String, String> map = (Map<String, String>)
+		// context.getBean("redis");
+		// map.put("haha", "vvv1");
+		//
+		// System.out.println(map.get("haha"));
 	}
 }

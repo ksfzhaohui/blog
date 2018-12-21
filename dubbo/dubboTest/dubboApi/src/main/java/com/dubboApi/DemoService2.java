@@ -3,9 +3,9 @@ package com.dubboApi;
 import com.dubboApi.bean.TestBean;
 
 public interface DemoService2 {
-	String syncSayHello(String name);
+	String syncSayHello2(String name);
 
-	String asyncSayHello(String name);
+	String asyncSayHello2(String name);
 	
-	String sayHello(TestBean bean);
+	String sayHello2(TestBean bean);
 }

@@ -8,16 +8,20 @@
 	<!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
 	<dubbo:application name="consumer-of-helloworld-app" />
 	<dubbo:registry address="zookeeper://127.0.0.1:2181" />
+	<!-- <dubbo:registry address="zookeeper://127.0.0.1:2181|zookeeper://127.0.0.1:2181" 
+		/> -->
+
 	<!-- 生成远程服务代理，可以和本地bean一样使用demoService -->
-	<dubbo:reference id="demoService" interface="com.dubboApi.DemoService" >
+	<dubbo:reference id="demoService" interface="com.dubboApi.DemoService">
 		<dubbo:method name="syncSayHello" async="false" />
 		<dubbo:method name="asyncSayHello" async="true" />
 	</dubbo:reference>
-	<dubbo:reference id="demoService2" interface="com.dubboApi.DemoService" >
+<!-- 	<dubbo:reference id="demoService2" interface="com.dubboApi.DemoService">
 		<dubbo:method name="syncSayHello" async="false" />
 		<dubbo:method name="asyncSayHello" async="true" />
-	</dubbo:reference>
-	
-	<dubbo:reference id="redis" interface="java.util.Map" url="redis://127.0.0.1:6379" />
-	
+	</dubbo:reference> -->
+
+	<dubbo:reference id="redis" interface="java.util.Map"
+		url="redis://127.0.0.1:6379" />
+
 </beans>  
