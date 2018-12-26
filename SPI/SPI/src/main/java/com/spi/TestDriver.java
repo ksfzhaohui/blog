@@ -18,6 +18,10 @@ public class TestDriver implements java.sql.Driver {
 		}
 	}
 
+	public TestDriver() {
+		System.out.println("init TestDriver");
+	}
+
 	@Override
 	public Connection connect(String url, Properties info) throws SQLException {
 		System.out.println("TestDriver-->connect:" + url);

@@ -7,9 +7,11 @@ import java.sql.SQLException;
 
 public class App {
 
-	public static void main(String[] args) throws ClassNotFoundException {
+	public static void main(String[] args)
+			throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
 		String url = "jdbc:mysql://localhost:3306/db3";
+		// String url = "jdbc:mysql:fabric://localhost:3306/db3";
 		String username = "root";
 		String password = "root";
 		String sql = "update travelrecord set name=\'bbb\' where id=1";

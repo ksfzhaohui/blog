@@ -1,0 +1,2 @@
+com.spi.serializer.JsonSerialization
+com.spi.serializer.ProtobufSerialization
