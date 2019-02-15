@@ -14,10 +14,10 @@ public class PushConsumer {
 
 	public static void main(String[] args) throws MQClientException {
 
-		DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("please rename to unique group name");
+		DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("ConsumerGroupName");
 		consumer.setNamesrvAddr("192.168.237.128:9876");
 		consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
-		consumer.subscribe("TopicTest", "*");
+		consumer.subscribe("TopicTest6", "*");
 
 		consumer.registerMessageListener(new MessageListenerConcurrently() {
 			public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs, ConsumeConcurrentlyContext context) {
