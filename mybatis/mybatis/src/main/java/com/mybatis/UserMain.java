@@ -8,32 +8,37 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import com.mybatis.mapper.BlogMapper;
-import com.mybatis.vo.Blog;
+import com.mybatis.mapper.UserMapper;
+import com.mybatis.vo.Sex;
+import com.mybatis.vo.User;
 
-public class Main {
+public class UserMain {
 	public static void main(String[] args) throws IOException {
 		String resource = "mybatis-config.xml";
 		InputStream inputStream = Resources.getResourceAsStream(resource);
 		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
-		//方式一
+		// 方式一
 		SqlSession session1 = sqlSessionFactory.openSession();
+		User user = new User();
+		user.setId(102);
+		user.setSex(Sex.FEMALE);
+		user.setName("zhaohui");
 		try {
-			Blog blog = (Blog) session1.selectOne("com.mybatis.mapper.BlogMapper.selectBlog", 101l);
-			System.out.println(blog.toString());
+			session1.insert("insertUser", user);
+			session1.commit();
 		} finally {
 			session1.close();
 		}
 
-		//方式二
 		SqlSession session2 = sqlSessionFactory.openSession();
 		try {
-			BlogMapper mapper = session2.getMapper(BlogMapper.class);
-			Blog blog = mapper.selectBlog(101);
-			System.out.println(blog.toString());
+			UserMapper userMapper = session2.getMapper(UserMapper.class);
+			User user2 = userMapper.getUser(102);
+			System.out.println(user2.toString());
 		} finally {
 			session2.close();
 		}
+
 	}
 }
