@@ -70,8 +70,8 @@
 	</environments>
 	<!-- 7.引入映射器 -->
 	<mappers>
-		<mapper resource="com/mybatis/mapper/BlogMapper.xml" />
-		<mapper resource="com/mybatis/mapper/UserMapper.xml" />
-		<mapper resource="com/mybatis/mapper/RoleMapper.xml" />
+		<mapper resource="mapper/BlogMapper.xml" />
+		<mapper resource="mapper/UserMapper.xml" />
+		<mapper resource="mapper/RoleMapper.xml" />
 	</mappers>
 </configuration>
