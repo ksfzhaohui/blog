@@ -1,0 +1,52 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mybatis.mapper.RoleMapper">
+	<select id="getRole1" parameterType="long" resultType="com.mybatis.vo.Role">
+		select
+		id,role_name as roleName,note
+		from role where id = #{id}
+	</select>
+	<select id="getRole2" parameterType="long" resultType="com.mybatis.vo.Role">
+		select
+		id,role_name,note
+		from role where id = #{id}
+	</select>
+	
+	<select id="findRoleByMap" parameterType="map" resultType="com.mybatis.vo.Role">
+		select
+		id,role_name as roleName,note
+		from role where role_name like concat('%',#{roleName},'%') and note like concat('%',#{note},'%')
+	</select>
+	
+	<select id="findRoleByAnnotation" parameterType="map" resultType="com.mybatis.vo.Role">
+		select
+		id,role_name as roleName,note
+		from role where role_name like concat('%',#{roleName},'%') and note like concat('%',#{note},'%')
+	</select>
+	
+	<!-- keyProperty指定哪个是主键字段   useGeneratedKeys主键是否使用数据库内置生成策略-->
+	<insert id="insertRole" parameterType="com.mybatis.vo.Role" useGeneratedKeys="true" keyProperty="id">
+		<selectKey keyProperty="id" resultType="long" order="BEFORE">
+			select if(max(id) is null,1,max(id)+1) as newId from role
+		</selectKey>
+		
+		insert into role (id,role_name,note) values (#{id},#{roleName},#{note})
+	</insert>
+	
+	<!-- #和$  有时候需要传递sql语句本身，而不是sql所需要的参数 -->
+	<select id="selectColumns" parameterType="string">
+		select ${columns} from role
+	</select>
+	
+	<!-- sql标签的使用：可以定义一串sql语句，其他语句可以直接引用 -->
+	<sql id="role_columns">
+		id,role_name,note
+	</sql>
+	<select id="getSqlRole" parameterType="long" resultType="com.mybatis.vo.Role">
+			select <include refid="role_columns"></include> from role where id=#{id}
+	</select>
+	
+	
+</mapper>
