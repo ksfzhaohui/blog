@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis.mapper.StudentMapper">
+    <!-- 
+	二级缓存默认是不开启的，开启使用如下配置，此配置有很多默认配置
+	1.所有的select语句会被缓存
+	2.insert,update,delete会刷新缓存
+	3.缓存使用lru来回收
+	4.NO Flush Inerval，没有刷新间隔，缓存不会已任何顺序来刷新
+	5.对象检索不是共享的，而且可以安全的被调用者修改，不干扰其他调用者或者线程所做的修改
+	 -->
+	<!-- <cache></cache> -->
+	<cache type="com.mybatis.cache.MyCache"></cache>
+	<select id="selectStudent" parameterType="long" resultType="com.mybatis.vo.Student">
+		select id,cnname as cnName,sex,note from student where id = #{id}
+	</select>
+</mapper>
