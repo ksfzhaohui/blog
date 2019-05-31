@@ -6,4 +6,12 @@
 	<select id="selectBlog" parameterType="long" resultType="blog">
 		select * from blog where id = #{id}
 	</select>
+	
+	<select id="selectBlogs" parameterType="string" resultType="blog">
+		select * from blog where author = #{author}
+	</select>
+	
+	<update id="updateBlog" parameterType="blog">
+		update blog set title=#{title} where  id = #{id}
+	</update>
 </mapper>

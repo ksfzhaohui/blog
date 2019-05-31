@@ -21,11 +21,13 @@
 		<setting name="useGeneratedKeys" value="false" />
 		<setting name="autoMappingBehavior" value="PARTIAL" />
 		<setting name="autoMappingUnknownColumnBehavior" value="WARNING" />
+		<!-- 执行器类型:SIMPLE,REUSE.BATCH -->
 		<setting name="defaultExecutorType" value="SIMPLE" />
 		<setting name="defaultStatementTimeout" value="25" />
 		<setting name="defaultFetchSize" value="100" />
 		<setting name="safeRowBoundsEnabled" value="false" />
-		<!-- 是否开启自动驼峰命名规则（camel case）映射，即从经典数据库列名 A_COLUMN 到经典 Java 属性名 aColumn 的类似映射。	 -->
+		<!-- 是否开启自动驼峰命名规则（camel case）映射，即从经典数据库列名 A_COLUMN 到经典 Java 属性名 aColumn 
+			的类似映射。 -->
 		<setting name="mapUnderscoreToCamelCase" value="true" />
 		<setting name="localCacheScope" value="SESSION" />
 		<setting name="jdbcTypeForNull" value="OTHER" />
@@ -38,21 +40,35 @@
 
 	<!-- 4.类型处理器（typeHandlers） -->
 	<typeHandlers>
-		<!-- <typeHandler javaType="string" jdbcType="VARCHAR" handler="com.mybatis.myTypeHandler.MyStringTypeHandler" /> -->
-		<!-- 枚举类型转换器  EnumOrdinalTypeHandler:使用整数下标  EnumTypeHandler:使用枚举字符串名称-->
-		<typeHandler javaType="com.mybatis.vo.Sex"  handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" />
-		<typeHandler javaType="com.mybatis.vo.Sex"  handler="org.apache.ibatis.type.EnumTypeHandler" />
+		<!-- <typeHandler javaType="string" jdbcType="VARCHAR" handler="com.mybatis.myTypeHandler.MyStringTypeHandler" 
+			/> -->
+		<!-- 枚举类型转换器 EnumOrdinalTypeHandler:使用整数下标 EnumTypeHandler:使用枚举字符串名称 -->
+		<typeHandler javaType="com.mybatis.vo.Sex"
+			handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" />
+		<typeHandler javaType="com.mybatis.vo.Sex"
+			handler="org.apache.ibatis.type.EnumTypeHandler" />
 		<!-- 自定义 -->
-		<typeHandler javaType="com.mybatis.vo.Sex"  handler="com.mybatis.myTypeHandler.SexEnumTypeHandler" />
-		<package name=""/>
+		<typeHandler javaType="com.mybatis.vo.Sex"
+			handler="com.mybatis.myTypeHandler.SexEnumTypeHandler" />
+		<package name="" />
 	</typeHandlers>
-	
-	<!-- 5.自定义对象工厂 
-	<objectFactory type="com.mybatis.myObjectFactory.MyObjectFactory">
-		<property name="name" value="MyObjectFactory"/>
-	</objectFactory>-->
 
-	<!-- 6.配置环境 default缺省情况下使用哪个数据源配置-->
+	<!-- 5.自定义对象工厂 <objectFactory type="com.mybatis.myObjectFactory.MyObjectFactory"> 
+		<property name="name" value="MyObjectFactory"/> </objectFactory> -->
+
+	<!-- 插件 -->
+	<plugins>
+		<plugin interceptor="com.mybatis.plugin.MyPlugin">
+			<property name="dbType" value="mysql" />
+		</plugin>
+
+		<plugin interceptor="com.mybatis.plugin.QueryLimitPlugin">
+			<property name="dbType" value="mysql" />
+			<property name="limit" value="50" />
+		</plugin>
+	</plugins>
+
+	<!-- 6.配置环境 default缺省情况下使用哪个数据源配置 -->
 	<environments default="development">
 		<environment id="development">
 			<!-- 数据库事务 -->
