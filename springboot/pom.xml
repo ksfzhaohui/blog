@@ -2,11 +2,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<!-- Maven用户可以继承 spring-boot-starter-parent 项目来获取合适的默认设置。该parent项目提供以下特性： 
+		1.默认编译级别为Java 1.6 2.源码编码为UTF-8 3.一个Dependency management节点，允许你省略常见依赖的 <version> 
+		标签，继承自 spring-boot-dependencies POM。 4.恰到好处的资源过滤 5.恰到好处的插件配置（exec插件，surefire，Git 
+		commit ID，shade） 6.恰到好处的对 application.properties 和 application.yml 进行筛选， 
+		7.包括特定profile（profile-specific） 的文件，比如 applicationfoo.properties 和 application-foo.yml -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.1.6.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!--lookup parent from repository -->
 	</parent>
 	<groupId>com.springboot</groupId>
 	<artifactId>springboot</artifactId>
@@ -19,21 +24,34 @@
 		<java.version>1.8</java.version>
 	</properties>
 
+	<!-- 如果你不想使用 spring-boot-starter-parent ，通过设置 scope=import 的依赖，你仍能获取到依赖管理的好处 -->
+	<!-- <dependencyManagement> <dependencies> <dependency> <groupId>org.springframework.boot</groupId> 
+		<artifactId>spring-boot-dependencies</artifactId> <version>2.1.6.RELEASE</version> 
+		<type>pom</type> <scope>import</scope> </dependency> </dependencies> </dependencyManagement> -->
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<!-- <dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency> -->
+		</dependency>
+
+		<!-- Spring Boot包含了一些额外的工具集，用于提升Spring Boot应用的开发体验 ，比如自动重启-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
+			<!-- Spring Boot包含一个Maven插件，它可以将项目打包成一个可执行jar -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>

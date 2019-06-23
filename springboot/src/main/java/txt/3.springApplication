@@ -1,0 +1,17 @@
+1.启动失败
+如果应用启动失败，注册的 FailureAnalyzers 就有机会提供一个特定的错误信息，及具体的解决该问题的动作；
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+2.自定义banner
+通过在classpath下添加一个 banner.txt 或设置 banner.location 来指定相应的文件可以改变启动过程中打印的banner；
+
+
+
