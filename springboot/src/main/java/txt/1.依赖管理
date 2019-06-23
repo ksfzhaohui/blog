@@ -1,0 +1,10 @@
+Spring Boot每次发布时都会提供一个它所支持的精选依赖列表。实际上，在构建配置里你不需要提供任何依赖的版本，因为Spring Boot已经替你管理好了。
+当更新Spring Boot时，那些依赖也会一起更新。注 如果有必要，你可以指定依赖的版本来覆盖Spring Boot默认版本。
+
+注：Spring Boot每次发布都关联一个Spring框架的基础版本，所以强烈建议你不要自己指定Spring版本；
+
+Maven用户可以继承 spring-boot-starter-parent 项目来获取合适的默认设置；
+
+如果你想配置项目，让其继承自 spring-boot-starter-parent；
+注：你应该只需在该依赖上指定Spring Boot版本，如果导入其他的starters，放心的省略版本号好了;
+可以在自己的项目中通过覆盖属性来覆盖个别的依赖。
