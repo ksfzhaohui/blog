@@ -1,0 +1,42 @@
+E:\github\blog\springboot\target>java -jar springboot-0.0.1-SNAPSHOT.jar
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.6.RELEASE)
+
+2019-06-23 14:38:47.104  INFO 10028 --- [           main] com.springboot.Springb
+ootApplication     : Starting SpringbootApplication v0.0.1-SNAPSHOT on SKY-20170
+404CXG with PID 10028 (E:\github\blog\springboot\target\springboot-0.0.1-SNAPSHO
+T.jar started by Administrator in E:\github\blog\springboot\target)
+2019-06-23 14:38:47.110  INFO 10028 --- [           main] com.springboot.Springb
+ootApplication     : No active profile set, falling back to default profiles: de
+fault
+2019-06-23 14:38:49.783  INFO 10028 --- [           main] o.s.b.w.embedded.tomca
+t.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-06-23 14:38:49.844  INFO 10028 --- [           main] o.apache.catalina.core
+.StandardService   : Starting service [Tomcat]
+2019-06-23 14:38:49.845  INFO 10028 --- [           main] org.apache.catalina.co
+re.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-06-23 14:38:50.034  INFO 10028 --- [           main] o.a.c.c.C.[Tomcat].[lo
+calhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-06-23 14:38:50.034  INFO 10028 --- [           main] o.s.web.context.Contex
+tLoader            : Root WebApplicationContext: initialization completed in 279
+8 ms
+2019-06-23 14:38:50.491  INFO 10028 --- [           main] o.s.s.concurrent.Threa
+dPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-06-23 14:38:51.000  INFO 10028 --- [           main] o.s.b.w.embedded.tomca
+t.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+
+2019-06-23 14:38:51.007  INFO 10028 --- [           main] com.springboot.Springb
+ootApplication     : Started SpringbootApplication in 4.949 seconds (JVM running
+ for 5.821)
+2019-06-23 14:38:55.918  INFO 10028 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[lo
+calhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-06-23 14:38:55.920  INFO 10028 --- [nio-8080-exec-1] o.s.web.servlet.Dispat
+cherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-06-23 14:38:55.937  INFO 10028 --- [nio-8080-exec-1] o.s.web.servlet.Dispat
+cherServlet        : Completed initialization in 16 ms

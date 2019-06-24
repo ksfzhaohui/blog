@@ -1,0 +1,9 @@
+Spring Boot自动配置（auto-configuration） 尝试根据添加的jar依赖自动配置你的Spring应用；
+实现自动配置有两种可选方式，分别是：
+将@EnableAutoConfiguration 或 @SpringBootApplication注解到 @Configuration类上；
+
+自动配置（Auto-configuration） 是非侵入性的，任何时候你都可以定义自己的配置类来替换自动配置的特定部分；
+如果需要查看当前应用启动了哪些自动配置项，你可以在运行应用时打开 --debug 开关，这将为核心日志开启debug日志级别，
+并将自动配置相关的日志输出到控制台；
+
+
