@@ -11,8 +11,8 @@
 	4.NO Flush Inerval，没有刷新间隔，缓存不会已任何顺序来刷新
 	5.对象检索不是共享的，而且可以安全的被调用者修改，不干扰其他调用者或者线程所做的修改
 	 -->
-	<!-- <cache></cache> -->
-	<cache type="com.mybatis.cache.MyCache"></cache>
+	<!-- <cache></cache> 
+	<cache type="com.mybatis.cache.MyCache"></cache>-->
 	<select id="selectStudent" parameterType="long" resultType="com.mybatis.vo.Student">
 		select id,cnname as cnName,sex,note from student where id = #{id}
 	</select>

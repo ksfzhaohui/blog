@@ -56,7 +56,7 @@
 	<!-- 5.自定义对象工厂 <objectFactory type="com.mybatis.myObjectFactory.MyObjectFactory"> 
 		<property name="name" value="MyObjectFactory"/> </objectFactory> -->
 
-	<!-- 插件 -->
+	<!-- 插件 
 	<plugins>
 		<plugin interceptor="com.mybatis.plugin.MyPlugin">
 			<property name="dbType" value="mysql" />
@@ -66,7 +66,7 @@
 			<property name="dbType" value="mysql" />
 			<property name="limit" value="50" />
 		</plugin>
-	</plugins>
+	</plugins>-->
 
 	<!-- 6.配置环境 default缺省情况下使用哪个数据源配置 -->
 	<environments default="development">
