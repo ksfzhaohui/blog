@@ -13,5 +13,13 @@ Action:
 2.自定义banner
 通过在classpath下添加一个 banner.txt 或设置 banner.location 来指定相应的文件可以改变启动过程中打印的banner；
 
+5.Application事件和监听器
+应用运行时，事件会以下面的次序发送：
+1. 在运行开始，但除了监听器注册和初始化以外的任何处理之前，会发送一个 ApplicationStartedEvent 。
+2. 在Environment将被用于已知的上下文，但在上下文被创建前，会发送一个 ApplicationEnvironmentPreparedEvent 。
+3. 在refresh开始前，但在bean定义已被加载后，会发送一个 ApplicationPreparedEvent 。
+4. 在refresh之后，相关的回调处理完，会发送一个 ApplicationReadyEvent ，表示应用准备好接收请求了。
+5. 启动过程中如果出现异常，会发送一个 ApplicationFailedEvent
 
-
+6.Web环境
+注 在Junit测试中使用 SpringApplication ，调用 setWebEnvironment(false) 是很有意义
