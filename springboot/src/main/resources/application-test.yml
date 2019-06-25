@@ -1,0 +1,5 @@
+name: zhaohui-ymal-test
+my:
+    servers:
+        - dev.bar.com.test
+        - foo.bar.com.test

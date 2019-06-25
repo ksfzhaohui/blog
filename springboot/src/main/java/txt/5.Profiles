@@ -1,0 +1,2 @@
+Spring Profiles提供了一种隔离应用程序配置的方式，并让这些配置只在特定的环境下生效。
+任何 @Component 或 @Configuration 都能注解 @Profile ，从而限制加载它的时机

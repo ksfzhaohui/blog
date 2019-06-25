@@ -1,0 +1,46 @@
+Spring Boot设计了一个非常特别的 PropertySource 顺序，以允许对属性值进行合理的覆盖，属性会以如下的顺序进行设值：
+1. home目录下的devtools全局设置属性（ ~/.spring-bootdevtools.properties ，如果devtools激活）。
+2. 测试用例上的@TestPropertySource注解。
+3. 测试用例上的@SpringBootTest#properties注解。
+4. 命令行参数
+5. 来自 SPRING_APPLICATION_JSON 的属性（环境变量或系统属性中内嵌的内联JSON）。
+6. ServletConfig 初始化参数。
+7. ServletContext 初始化参数。
+8. 来自于 java:comp/env 的JNDI属性。
+9. Java系统属性（System.getProperties()）。
+10. 操作系统环境变量。
+11. RandomValuePropertySource，只包含 random.* 中的属性。
+12. 没有打进jar包的Profile-specific应用属性（ application-{profile}.properties 和YAML变量）。
+13. 打进jar包中的Profile-specific应用属性（ application-{profile}.properties 和YAML变量）。
+14. 没有打进jar包的应用配置（ application.properties 和YAML变量）。
+15. 打进jar包中的应用配置（ application.properties 和YAML变量）。
+16. @Configuration 类上的 @PropertySource 注解。
+17. 默认属性（使用 SpringApplication.setDefaultProperties 指定）。
+
+配置随机值
+在注入随机值（比如，密钥或测试用例）时 RandomValuePropertySource 很有用，它能产生整数，longs或字符串
+my.secret=${random.value}
+my.number=${random.int}
+my.bignumber=${random.long}
+my.number.less.than.ten=${random.int(10)}
+my.number.in.range=${random.int[1024,65536]}
+
+
+使用YAML代替Properties
+YAML是JSON的一个超集，也是一种方便的定义层次配置数据的格式。只要你将SnakeYAML 库放到classpath下，
+ SpringApplication 就会自动支持YAML，以作为properties的替换;
+
+Spring框架提供两个便利的类用于加载YAML文档， YamlPropertiesFactoryBean 会将YAML加载为 Properties ， 
+YamlMapFactoryBean 会将YAML加载为 Map;
+
+
+Multi-profile YAML文档
+你可以在单个文件中定义多个特定配置（profile-specific）的YAML文档，并通过 spring.profiles 标示生效的文档
+
+
+
+
+
+
+
+

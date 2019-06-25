@@ -15,6 +15,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class MyBean {
+
 	@Autowired
 	public MyBean(ApplicationArguments args) {
 		boolean debug = args.containsOption("debug");
