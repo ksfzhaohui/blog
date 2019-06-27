@@ -18,9 +18,12 @@ public class CustomSpringbootApplication {
 
 	public static void main(String[] args) {
 		SpringApplication app = new SpringApplication(CustomSpringbootApplication.class);
-		app.setBannerMode(Banner.Mode.OFF);
+		app.setBannerMode(Banner.Mode.LOG);
 		app.addListeners(new MyListener());
 //		app.setWebApplicationType(WebApplicationType.NONE);
+		
+		//以编程方式设置profiles
+		app.setAdditionalProfiles("prod");
 		app.run(args);
 	}
 

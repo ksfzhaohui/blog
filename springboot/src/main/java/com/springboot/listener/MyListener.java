@@ -7,7 +7,7 @@ public class MyListener implements ApplicationListener<ApplicationEvent> {
 
 	@Override
 	public void onApplicationEvent(ApplicationEvent arg0) {
-		System.err.println(arg0.toString());
+		//System.err.println(arg0.toString());
 	}
 
 }

@@ -1,5 +1,5 @@
 name: zhaohui-ymal-prod
-my:
-    servers:
+my: 
+    servers: 
         - dev.bar.com.prod
         - foo.bar.com.prod
