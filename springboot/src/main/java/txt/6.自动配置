@@ -2,3 +2,8 @@
 通常自动配置类需要使用 @ConditionalOnClass 和 @ConditionalOnMissingBean 注解，
 这是为了确保只有在相关的类被发现及没有声明自定义的 @Configuration 时才应用自动配置，
 具体查看 spring-boot-autoconfigure 源码中的 @Configuration 类（ META-INF/spring.factories 文件
+
+
+Spring Boot会检查你发布的jar中是否存在 META-INF/spring.factories 文件，
+该文件中以 EnableAutoConfiguration 为key的属性应该列出你的配置类;
+
