@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.ExampleService;
 import com.springboot.bean.RedisBean;
 import com.springboot.service.DBService;
 import com.springboot.service.HelloService;
@@ -17,9 +18,12 @@ public class HelloController {
 
 	@Autowired
 	private DBService dbService;
-	
+
 	@Autowired
 	private RedisBean redisBean;
+
+	@Autowired
+	private ExampleService exampleService;
 
 	// 注解提供路由信息，它告诉Spring任何来自"/"路径的HTTP请求都应该被映射到 home 方法
 	@RequestMapping("/")
@@ -31,17 +35,27 @@ public class HelloController {
 	String db() {
 		return dbService.getBlog(101);
 	}
-	
+
 	@RequestMapping("/dbjpa")
 	String dbJPA() {
 		return dbService.getBlogJPA(101).toString();
 	}
-	
+
 	@RequestMapping("/redis")
-	String redisSet(){
+	String redisSet() {
 		redisBean.set("hello", "nbl");
 		return redisBean.get("hello");
 	}
 
+	/**
+	 * http://localhost:8888/example?word=hello
+	 * 
+	 * @param word
+	 * @return
+	 */
+	@RequestMapping("/example")
+	public String input(String word) {
+		return exampleService.wrap(word);
+	}
 
 }

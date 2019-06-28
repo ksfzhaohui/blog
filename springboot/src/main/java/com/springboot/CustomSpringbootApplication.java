@@ -4,6 +4,7 @@ import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 
 import com.springboot.listener.MyListener;
 
@@ -14,6 +15,7 @@ import com.springboot.listener.MyListener;
  *
  */
 @SpringBootApplication
+@EnableCaching
 public class CustomSpringbootApplication {
 
 	public static void main(String[] args) {
