@@ -26,9 +26,6 @@ public class HelloController {
 	@Autowired
 	private ExampleService exampleService;
 
-	@Autowired
-	private RoleService roleService;
-
 	// 注解提供路由信息，它告诉Spring任何来自"/"路径的HTTP请求都应该被映射到 home 方法
 	@RequestMapping("/")
 	String home() {
@@ -60,11 +57,6 @@ public class HelloController {
 	@RequestMapping("/example")
 	public String input(String word) {
 		return exampleService.wrap(word);
-	}
-
-	@RequestMapping("/role")
-	public String getRole(long id) {
-		return roleService.findRoleById(id).toString();
 	}
 
 }
