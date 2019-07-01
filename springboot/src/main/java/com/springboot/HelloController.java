@@ -9,6 +9,7 @@ import com.example.ExampleService;
 import com.springboot.bean.RedisBean;
 import com.springboot.service.DBService;
 import com.springboot.service.HelloService;
+import com.springboot.service.RoleService;
 
 @RestController // 被称为构造型（stereotype） 注解,它为阅读代码的人提供暗示（这是一个支持REST的控制器）
 @EnableAutoConfiguration // 告诉Spring Boot根据添加的jar依赖猜测你想如何配置Spring
@@ -24,6 +25,9 @@ public class HelloController {
 
 	@Autowired
 	private ExampleService exampleService;
+
+	@Autowired
+	private RoleService roleService;
 
 	// 注解提供路由信息，它告诉Spring任何来自"/"路径的HTTP请求都应该被映射到 home 方法
 	@RequestMapping("/")
@@ -56,6 +60,11 @@ public class HelloController {
 	@RequestMapping("/example")
 	public String input(String word) {
 		return exampleService.wrap(word);
+	}
+
+	@RequestMapping("/role")
+	public String getRole(long id) {
+		return roleService.findRoleById(id).toString();
 	}
 
 }
