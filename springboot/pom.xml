@@ -85,6 +85,11 @@
 			<artifactId>example-spring-boot-starter</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>com.format</groupId>
+			<artifactId>format-spring-boot-starter</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 
 		<!-- Spring Boot包含了一些额外的工具集，用于提升Spring Boot应用的开发体验 ，比如自动重启 -->
 		<dependency>
@@ -106,3 +111,4 @@
 	</build>
 
 </project>
+
