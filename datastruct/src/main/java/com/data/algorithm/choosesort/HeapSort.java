@@ -7,82 +7,71 @@ import java.util.Arrays;
  * 但是这样的操作并没有把每一趟的比较结果保存下来，在后一趟的比较中，有许多比较在前一趟已经做过了，
  * 但由于前一趟排序时未保存这些比较结果，所以后一趟排序时又重复执行了这些比较操作，因而记录的比较次数较多。
  * 
- * 
- * 
+ * 算法思想:
+ * 将待排序的序列构造成一个大顶堆。此时，整个序列的最大值就是堆顶的根节点。将它移走(其实就是将其与堆数组的末尾元素交换，此时末尾元素就是最大值)，
+ * 然后将剩余的n-1个序列重新构造成一个堆，这样就会得到n个元素中的次最大值。如此反复执行，就能得到一个有序序列了。
  *
  */
 public class HeapSort {
-
+	
 	public static void main(String[] args) {
-		int arrays[] = { 5, 4, 8, 9, 3, 2, 7 };
-		for (int i = 0; i < arrays.length; i++) {
-
-			// 每次建堆就可以排除一个元素了
-			maxHeapify(arrays, arrays.length - i);
-
-			// 交换
-			int temp = arrays[0];
-			arrays[0] = arrays[(arrays.length - 1) - i];
-			arrays[(arrays.length - 1) - i] = temp;
-
-		}
-		System.out.println(Arrays.toString(arrays));
+		int[] arr = { 50, 10, 90, 30, 70, 40, 80, 60, 20 };
+		heapSort(arr);
+		System.out.println(Arrays.toString(arr));
 	}
-
+ 
 	/**
-	 * 建堆
-	 *
-	 * @param arrays
-	 *            看作是完全二叉树
-	 * @param currentRootNode
-	 *            当前父节点位置
-	 * @param size
-	 *            节点总数
+	 * 堆排序
 	 */
-	public static void heapify(int[] arrays, int currentRootNode, int size) {
-
-		if (currentRootNode < size) {
-			// 左子树和右字数的位置
-			int left = 2 * currentRootNode + 1;
-			int right = 2 * currentRootNode + 2;
-
-			// 把当前父节点位置看成是最大的
-			int max = currentRootNode;
-
-			if (left < size) {
-				// 如果比当前根元素要大，记录它的位置
-				if (arrays[max] < arrays[left]) {
-					max = left;
-				}
-			}
-			if (right < size) {
-				// 如果比当前根元素要大，记录它的位置
-				if (arrays[max] < arrays[right]) {
-					max = right;
-				}
-			}
-			// 如果最大的不是根元素位置，那么就交换
-			if (max != currentRootNode) {
-				int temp = arrays[max];
-				arrays[max] = arrays[currentRootNode];
-				arrays[currentRootNode] = temp;
-
-				// 继续比较，直到完成一次建堆
-				heapify(arrays, max, size);
-			}
+	private static void heapSort(int[] arr) { 
+		// 将待排序的序列构建成一个大顶堆
+		for (int i = arr.length / 2; i >= 0; i--){ 
+			heapAdjust(arr, i, arr.length); 
+		}
+		
+		// 逐步将每个最大值的根节点与末尾元素交换，并且再调整二叉树，使其成为大顶堆
+		for (int i = arr.length - 1; i > 0; i--) { 
+			swap(arr, 0, i); // 将堆顶记录和当前未经排序子序列的最后一个记录交换
+			heapAdjust(arr, 0, i); // 交换之后，需要重新检查堆是否符合大顶堆，不符合则要调整
 		}
 	}
-
+ 
 	/**
-	 * 完成一次建堆，最大值在堆的顶部(根节点)
+	 * 构建堆的过程
+	 * @param arr 需要排序的数组
+	 * @param i 需要构建堆的根节点的序号
+	 * @param n 数组的长度
 	 */
-	public static void maxHeapify(int[] arrays, int size) {
-
-		// 从数组的尾部开始，直到第一个元素(角标为0)
-		for (int i = size - 1; i >= 0; i--) {
-			heapify(arrays, i, size);
+	private static void heapAdjust(int[] arr, int i, int n) {
+		int child;
+		int father; 
+		for (father = arr[i]; leftChild(i) < n; i = child) {
+			child = leftChild(i);
+			
+			// 如果左子树小于右子树，则需要比较右子树和父节点
+			if (child != n - 1 && arr[child] < arr[child + 1]) {
+				child++; // 序号增1，指向右子树
+			}
+			
+			// 如果父节点小于孩子结点，则需要交换
+			if (father < arr[child]) {
+				arr[i] = arr[child];
+			} else {
+				break; // 大顶堆结构未被破坏，不需要调整
+			}
 		}
-
+		arr[i] = father;
 	}
-
+ 
+	// 获取到左孩子结点
+	private static int leftChild(int i) {
+		return 2 * i + 1;
+	}
+	
+	// 交换元素位置
+	private static void swap(int[] arr, int index1, int index2) {
+		int tmp = arr[index1];
+		arr[index1] = arr[index2];
+		arr[index2] = tmp;
+	}
 }
