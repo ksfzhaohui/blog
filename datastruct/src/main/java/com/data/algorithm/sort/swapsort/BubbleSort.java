@@ -1,4 +1,4 @@
-package com.data.algorithm.swapsort;
+package com.data.algorithm.sort.swapsort;
 
 import java.util.Arrays;
 

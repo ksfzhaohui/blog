@@ -1,4 +1,4 @@
-package com.data.algorithm.choosesort;
+package com.data.algorithm.sort.choosesort;
 
 import java.util.Arrays;
 
