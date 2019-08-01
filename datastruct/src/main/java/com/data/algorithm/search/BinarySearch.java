@@ -15,6 +15,13 @@ public class BinarySearch {
 		System.out.println(search2(src, search_value, 0, 6));
 	}
 
+	/**
+	 * 非递归方式
+	 * 
+	 * @param a
+	 * @param value
+	 * @return
+	 */
 	private static int search1(int a[], int value) {
 		int low, high, mid;
 		low = 0;
@@ -31,6 +38,15 @@ public class BinarySearch {
 		return -1;
 	}
 
+	/**
+	 * 递归方式
+	 * 
+	 * @param a
+	 * @param value
+	 * @param low
+	 * @param high
+	 * @return
+	 */
 	private static int search2(int a[], int value, int low, int high) {
 		int mid = low + (high - low) / 2;
 		if (a[mid] == value)
