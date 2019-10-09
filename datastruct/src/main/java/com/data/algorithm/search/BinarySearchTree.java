@@ -3,8 +3,7 @@ package com.data.algorithm.search;
 /**
  * 二叉查找树
  * 
- * 1、若它的左子树不空，则其左子树上的所有结点的值均小于它根结点的值；
- * 2、若它的右子树不空，则其右子树上的所有结点的值均大于它根结点的值；
+ * 1、若它的左子树不空，则其左子树上的所有结点的值均小于它根结点的值； 2、若它的右子树不空，则其右子树上的所有结点的值均大于它根结点的值；
  * 3、它的左、右子树也分别为二叉查找树。
  * 
  * 对二叉查找树进行中序遍历，即可得到有序的数列
@@ -162,6 +161,11 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
 
 	}
 
+	/**
+	 * 初始化一颗二叉查找树：对二叉查找树进行中序遍历，即可得到有序的数列
+	 * 
+	 * @return
+	 */
 	public BinaryNode<Integer> init() {
 		BinaryNode<Integer> node3 = new BinaryNode<Integer>(3);
 		BinaryNode<Integer> node1 = new BinaryNode<Integer>(1);
@@ -180,13 +184,27 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
 		}
 	}
 
+	/**
+	 * 中序遍历
+	 * 
+	 * @param node
+	 */
+	public void inOrder(BinaryNode<T> node) {
+		if (node != null) {
+			inOrder(node.left);
+			System.out.print(node.data);
+			inOrder(node.right);
+		}
+	}
+
 	public static void main(String[] args) {
 		BinarySearchTree<Integer> searchTree = new BinarySearchTree<>();
 		BinaryNode<Integer> node = searchTree.init();
 		searchTree.rootTree = node;
-		searchTree.preOrder(searchTree.rootTree);
+		searchTree.inOrder(searchTree.rootTree);
 		searchTree.remove(4);
-		searchTree.preOrder(searchTree.rootTree);
+		System.out.println();
+		searchTree.inOrder(searchTree.rootTree);
 	}
 
 }
