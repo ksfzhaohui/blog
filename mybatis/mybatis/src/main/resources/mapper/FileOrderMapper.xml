@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis.mapper.FileOrderMapper">
+	<insert id="batchInsert" parameterType="list">
+		<if test="items.get(0) != null">
+			insert into file_order (field1,
+			field2,
+			field3, field4, field5,
+			field6,
+			field7, field8,
+			field9, field10, field11,
+			field12, field13,
+			field14,
+			field15, field16,
+			field17, field18, crt_time,
+			upd_time)
+			values
+			<foreach collection="items" index="index" item="item"
+				separator=",">
+				(#{item.field1,jdbcType=VARCHAR},
+				#{item.field2,jdbcType=VARCHAR},
+				#{item.field3,jdbcType=VARCHAR},
+				#{item.field4,jdbcType=VARCHAR},
+				#{item.field5,jdbcType=VARCHAR},
+				#{item.field6,jdbcType=VARCHAR},
+				#{item.field7,jdbcType=VARCHAR},
+				#{item.field8,jdbcType=VARCHAR},
+				#{item.field9,jdbcType=VARCHAR},
+				#{item.field10,jdbcType=VARCHAR},
+				#{item.field11,jdbcType=VARCHAR},
+				#{item.field12,jdbcType=VARCHAR},
+				#{item.field13,jdbcType=VARCHAR},
+				#{item.field14,jdbcType=VARCHAR},
+				#{item.field15,jdbcType=VARCHAR},
+				#{item.field16,jdbcType=VARCHAR},
+				#{item.field17,jdbcType=VARCHAR},
+				#{item.field18,jdbcType=VARCHAR},
+				#{item.crtTime,jdbcType=TIMESTAMP},
+				#{item.updTime,jdbcType=TIMESTAMP})
+			</foreach>
+		</if>
+	</insert>
+</mapper>

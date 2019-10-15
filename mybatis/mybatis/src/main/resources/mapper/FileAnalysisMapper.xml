@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis.mapper.FielAnalysisMapper">
+	<select id="selectFileAnalysis" parameterType="string" resultType="fileAnalysis">
+		select * from file_analysis where file_type = #{fileType}
+	</select>
+
+	<update id="updateFileAnalysis" parameterType="fileAnalysis">
+		update
+		file_analysis set
+		status=#{status},position=#{position},upd_time=#{updTime} where id =
+		#{id}
+	</update>
+</mapper>
