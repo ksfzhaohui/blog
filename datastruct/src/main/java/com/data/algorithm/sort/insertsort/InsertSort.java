@@ -41,6 +41,7 @@ public class InsertSort {
 
 	public static void main(String[] args) {
 		int src[] = { 4, 5, 2, 1, 9, 0, 3 };
-		System.out.println(Arrays.toString(doInsertSort(src)));
+		doInsertSort(src);
+		System.out.println(Arrays.toString(src));
 	}
 }

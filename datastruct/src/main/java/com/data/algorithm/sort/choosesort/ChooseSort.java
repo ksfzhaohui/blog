@@ -39,6 +39,7 @@ public class ChooseSort {
 
 	public static void main(String[] args) {
 		int src[] = { 4, 5, 2, 1, 9, 0, 3 };
+		doChooseSort(src);
 		System.out.println(Arrays.toString(src));
 	}
 

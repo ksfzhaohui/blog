@@ -40,6 +40,7 @@ public class TwoInsertSort {
 
 	public static void main(String[] args) {
 		int src[] = { 5, 4 ,8,9,3,2,7};
+		twoInsertSort(src);
 		System.out.println(Arrays.toString(src));
 	}
 

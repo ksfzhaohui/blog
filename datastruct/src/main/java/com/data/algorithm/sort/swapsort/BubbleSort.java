@@ -21,12 +21,11 @@ public class BubbleSort {
 	 */
 	public static int[] doBubbleSort(int[] src) {
 		int len = src.length;
-		int temp;
-		for (int i = 0; i < len; i++) {
-			for (int j = i + 1; j < len; j++) {
-				if (src[i] > src[j]) {
-					temp = src[i];
-					src[i] = src[j];
+		for (int i = 0; i < len - 1; i++) {
+			for (int j = 0; j < len - 1 - i; j++) {
+				if (src[j] > src[j + 1]) { // 相邻元素两两对比
+					int temp = src[j + 1]; // 元素交换
+					src[j + 1] = src[j];
 					src[j] = temp;
 				}
 			}
@@ -36,6 +35,7 @@ public class BubbleSort {
 
 	public static void main(String[] args) {
 		int src[] = { 4, 5, 2, 1, 9, 0, 3 };
+		doBubbleSort(src);
 		System.out.println(Arrays.toString(src));
 	}
 }
