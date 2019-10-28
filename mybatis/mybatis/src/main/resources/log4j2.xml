@@ -24,13 +24,13 @@
 	<loggers>
 		<AsyncLogger name="com.mybatis" level="debug" additivity="false"
 			includeLocation="true">
-			<AppenderRef ref="asynLogger" />
-			<AppenderRef ref="Console" />
+			<!-- <AppenderRef ref="asynLogger" />
+			<AppenderRef ref="Console" /> -->
 		</AsyncLogger>
-		<AsyncRoot level="debug" includeLocation="true">
+		<!-- <AsyncRoot level="debug" includeLocation="true">
 			<AppenderRef ref="asynLogger" />
 			<AppenderRef ref="Console" />
-		</AsyncRoot>
+		</AsyncRoot> -->
 	</loggers>
 
 </configuration>

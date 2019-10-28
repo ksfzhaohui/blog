@@ -5,7 +5,7 @@
 <mapper namespace="com.mybatis.mapper.FileOrderMapper">
 	<insert id="batchInsert" parameterType="list">
 		<if test="items.get(0) != null">
-			insert into file_order (field1,
+			insert into file_order (file_id,field1,
 			field2,
 			field3, field4, field5,
 			field6,
@@ -19,7 +19,8 @@
 			values
 			<foreach collection="items" index="index" item="item"
 				separator=",">
-				(#{item.field1,jdbcType=VARCHAR},
+				(#{item.fileId,jdbcType=BIGINT},
+				#{item.field1,jdbcType=VARCHAR},
 				#{item.field2,jdbcType=VARCHAR},
 				#{item.field3,jdbcType=VARCHAR},
 				#{item.field4,jdbcType=VARCHAR},
