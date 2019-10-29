@@ -5,6 +5,7 @@ import java.util.Date;
 public class FileOrder {
 
 	private Long id;
+	private Long fileId;
 	private String field1;
 	private String field2;
 	private String field3;
@@ -26,12 +27,20 @@ public class FileOrder {
 	private Date crtTime;
 	private Date updTime;
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public Long getFileId() {
+		return fileId;
+	}
+
+	public void setFileId(Long fileId) {
+		this.fileId = fileId;
 	}
 
 	public String getField1() {

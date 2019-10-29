@@ -14,7 +14,7 @@ public class FileCreateMain {
 
 	public static void main(String[] args) throws IOException {
 		FileWriter out = new FileWriter(new File("D://xxxxxxx//orders.txt"));
-		for (int i = 0; i < 10000000; i++) {
+		for (int i = 0; i < 100; i++) {
 			out.write(
 					"vaule1,vaule2,vaule3,vaule4,vaule5,vaule6,vaule7,vaule8,vaule9,vaule10,vaule11,vaule12,vaule13,vaule14,vaule15,vaule16,vaule17,vaule18");
 			out.write(System.getProperty("line.separator"));

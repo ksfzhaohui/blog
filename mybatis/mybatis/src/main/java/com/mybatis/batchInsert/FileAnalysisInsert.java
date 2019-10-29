@@ -156,6 +156,7 @@ public class FileAnalysisInsert {
 				if (!StringUtils.isEmptyOrWhitespaceOnly(row)) {
 					String order[] = row.split(",");
 					FileOrder fileOrder = new FileOrder();
+					fileOrder.setFileId(fileAnalysis.getId());
 					fileOrder.setField1(order[0]);
 					fileOrder.setField2(order[1]);
 					fileOrder.setField3(order[2]);
@@ -206,6 +207,8 @@ public class FileAnalysisInsert {
 			session.commit();
 			long endTime = System.currentTimeMillis();
 			System.out.println("===插入数据花费:" + (endTime - startTime) + "ms===");
+		} catch (Exception e) {
+			session.rollback();
 		} finally {
 			session.close();
 		}
