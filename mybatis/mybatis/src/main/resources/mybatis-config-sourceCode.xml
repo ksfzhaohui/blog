@@ -32,6 +32,9 @@
 		<setting name="localCacheScope" value="SESSION" />
 		<setting name="jdbcTypeForNull" value="OTHER" />
 		<setting name="lazyLoadTriggerMethods" value="equals,clone,hashCode,toString" />
+		
+		<!-- 是否使用真实的参数名称 -->
+		<setting name="useActualParamName" value="false"/>
 	</settings>
 	<!-- 3.类型别名（typeAliases） -->
 	<typeAliases>

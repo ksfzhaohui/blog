@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.mybatis.mapper.BlogMapper;
 import com.mybatis.vo.Blog;
+import com.mybatis.vo.BlogNew;
 
 public class BlogMain {
 	public static void main(String[] args) throws IOException {
@@ -21,6 +22,7 @@ public class BlogMain {
 			 select(session);
 //			selectHandler(session);
 //			 insert(session);
+//			update(session);
 		} finally {
 			session.close();
 		}
@@ -37,7 +39,7 @@ public class BlogMain {
 //		// 父接口中的方法
 //		System.out.println(mapper.selectParent(158));
 //		System.out.println(mapper.selectBlog(158));
-		System.out.println(mapper.selectBlog3(158,"zhaohui"));
+		System.out.println(mapper.selectBlogMap(158,"zhaohui"));
 	}
 
 	public static void selectHandler(SqlSession session) {
@@ -58,5 +60,15 @@ public class BlogMain {
 		mapper.insertBlog(blog);
 		session.commit();
 		System.out.println(blog.toString());
+	}
+	
+	public static void update(SqlSession session){
+		BlogMapper mapper = session.getMapper(BlogMapper.class);
+		Blog blog = new Blog();
+		blog.setId(158);
+		blog.setTitle("hello java new");
+		
+		mapper.updateBlog(blog);
+		session.commit();
 	}
 }
