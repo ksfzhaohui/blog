@@ -16,33 +16,32 @@ import org.apache.ibatis.type.MappedTypes;
  * @author hui.zhao.cfs
  *
  */
-@MappedTypes({ String.class })
-@MappedJdbcTypes(JdbcType.VARCHAR)
+/*@MappedTypes({ String.class })
+@MappedJdbcTypes(JdbcType.VARCHAR)*/
 public class MyStringTypeHandler extends BaseTypeHandler<String> {
 
 	@Override
 	public void setNonNullParameter(PreparedStatement ps, int i, String parameter, JdbcType jdbcType)
 			throws SQLException {
-		System.out.println(
-				"ExampleTypeHandler->setNonNullParameter(PreparedStatement ps, int i, String parameter, JdbcType jdbcType)");
+		System.out.println("MyStringTypeHandler->setNonNullParameter");
 		ps.setString(i, parameter);
 	}
 
 	@Override
 	public String getNullableResult(ResultSet rs, String columnName) throws SQLException {
-		System.out.println("ExampleTypeHandler->getNullableResult(ResultSet rs, String columnName)");
+		System.out.println("MyStringTypeHandler->getNullableResult");
 		return rs.getString(columnName);
 	}
 
 	@Override
 	public String getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
-		System.out.println("ExampleTypeHandler->getNullableResult(ResultSet rs, int columnIndex)");
+		System.out.println("MyStringTypeHandler->getNullableResult");
 		return rs.getString(columnIndex);
 	}
 
 	@Override
 	public String getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
-		System.out.println("ExampleTypeHandler->getNullableResult(CallableStatement cs, int columnIndex)");
+		System.out.println("MyStringTypeHandler->getNullableResult");
 		return cs.getString(columnIndex);
 	}
 }

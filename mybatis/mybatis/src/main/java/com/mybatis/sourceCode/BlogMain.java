@@ -39,7 +39,8 @@ public class BlogMain {
 //		// 父接口中的方法
 //		System.out.println(mapper.selectParent(158));
 //		System.out.println(mapper.selectBlog(158));
-		System.out.println(mapper.selectBlogMap(158,"zhaohui"));
+		System.out.println(mapper.selectBlogMap2(158,"zhaohui"));
+//		System.out.println(mapper.selectBlogsArray("zhaohui"));
 	}
 
 	public static void selectHandler(SqlSession session) {
@@ -55,7 +56,7 @@ public class BlogMain {
 		BlogMapper mapper = session.getMapper(BlogMapper.class);
 		Blog blog = new Blog();
 		blog.setTitle("hello java");
-		blog.setAuthor("zhaohui");
+//		blog.setAuthor("zhaohui");
 		blog.setContent("hello java666");
 		mapper.insertBlog(blog);
 		session.commit();

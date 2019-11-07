@@ -19,16 +19,22 @@
 	</select>
 
 
-	<resultMap id="blogResultMap" type="blog">
-		<result property="id" column="id" />
+	<resultMap id="blogResultMap2" type="string">
 		<result property="title" column="title" />
-		<result property="author" column="author" />
-		<result property="content" column="content"/>
 	</resultMap>
-	<select id="selectBlogMap" parameterType="hashmap" resultMap="blogResultMap">
-		select id,title from blog where id = #{id} and
-		author=#{author,javaType=string}
+	<resultMap id="blogResultMap" type="blog" autoMapping="true">
+		<result property="id" column="id" javaType="long" jdbcType="BIGINT"/>
+		<result property="title" column="title" javaType="string" jdbcType="VARCHAR"/>
+		<result property="content" column="content" javaType="string" jdbcType="VARCHAR"/>
+	</resultMap>
+	<select id="selectBlogMap" parameterType="hashmap" resultType="blog">
+		select id,title,author from blog where id = #{id} and author=#{author}
 	</select>
+	<select id="selectBlogMap2" parameterType="hashmap" resultType="blogEnum">
+		select id,title,author from blog where id = #{id} and author=#{author}
+	</select>
+	 <!--<select id="selectBlogMap" parameterType="hashmap" resultMap="blogResultMap"> -->
+	<!-- <select id="selectBlogMap" parameterType="hashmap" resultType="Map"> -->
 
 	<select id="selectBlog" parameterType="long" resultType="blog">
 		select *

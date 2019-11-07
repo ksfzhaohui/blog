@@ -12,6 +12,7 @@ import org.apache.ibatis.session.ResultHandler;
 import org.apache.ibatis.session.RowBounds;
 
 import com.mybatis.vo.Blog;
+import com.mybatis.vo.BlogEnum;
 import com.mybatis.vo.BlogNew;
 
 public interface BlogMapper<T> extends ParentMapper {
@@ -28,6 +29,7 @@ public interface BlogMapper<T> extends ParentMapper {
 	// @Flush
 	public Blog selectBlog3(@Param("id")long id,@Param("author") String author);
 	public Blog selectBlogMap(@Param("id")long id,@Param("author") String author);
+	public BlogEnum selectBlogMap2(@Param("id")long id,@Param("author") String author);
 
 	public T selectBlog4(long id);
 
@@ -35,8 +37,8 @@ public interface BlogMapper<T> extends ParentMapper {
 
 	public List<Blog> selectBlogs(String author);
 
-	@MapKey("xx")
-	public Map<Long, Blog> selectBlogsArray(String author);
+//	@MapKey("xx")
+	public List<Blog> selectBlogsArray(String author);
 
 	public void selectBlogsByHandler(String author, ResultHandler handler);
 

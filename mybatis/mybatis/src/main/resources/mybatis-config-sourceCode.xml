@@ -32,19 +32,27 @@
 		<setting name="localCacheScope" value="SESSION" />
 		<setting name="jdbcTypeForNull" value="OTHER" />
 		<setting name="lazyLoadTriggerMethods" value="equals,clone,hashCode,toString" />
-		
+
 		<!-- 是否使用真实的参数名称 -->
-		<setting name="useActualParamName" value="false"/>
+		<setting name="useActualParamName" value="false" />
 	</settings>
 	<!-- 3.类型别名（typeAliases） -->
 	<typeAliases>
 		<typeAlias type="com.mybatis.vo.Blog" alias="blog" />
+		<typeAlias type="com.mybatis.vo.BlogEnum" alias="blogEnum" />
 	</typeAliases>
 
 	<!-- 4.类型处理器（typeHandlers） -->
 	<typeHandlers>
+		<typeHandler javaType="string" jdbcType="VARCHAR" handler="com.mybatis.myTypeHandler.MyStringTypeHandler" />
+		<typeHandler javaType="string" handler="com.mybatis.myTypeHandler.MyStringTypeHandler" />
+		<!-- <typeHandler javaType="string" handler="com.mybatis.myTypeHandler.MyStringTypeHandler" /> -->
+		<typeHandler javaType="com.mybatis.vo.AuthorEnum" handler="org.apache.ibatis.type.EnumTypeHandler" />
 	</typeHandlers>
-
+	<!-- 5.自定义对象工厂 -->
+	<objectFactory type="com.mybatis.myObjectFactory.MyObjectFactory">
+		<property name="name" value="MyObjectFactory" />
+	</objectFactory>
 
 	<!-- 6.配置环境 default缺省情况下使用哪个数据源配置 -->
 	<environments default="development">
@@ -65,6 +73,6 @@
 	<!-- 7.引入映射器 -->
 	<mappers>
 		<mapper resource="mapper/BlogMapper.xml" />
-		<mapper resource="mapper/BlogParentMapper.xml"/>
+		<mapper resource="mapper/BlogParentMapper.xml" />
 	</mappers>
 </configuration>

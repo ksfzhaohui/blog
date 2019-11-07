@@ -1,17 +1,17 @@
 package com.mybatis.vo;
 
-public class Blog {
+public class BlogEnum {
 
 	private long id;
 	private String title;
-	private String author;
+	private AuthorEnum author;
 	private String content;
 
-	public Blog() {
+	public BlogEnum() {
 
 	}
 
-	public Blog(Long id) {
+	public BlogEnum(Long id) {
 		this.id = id;
 	}
 
@@ -31,11 +31,11 @@ public class Blog {
 		this.title = title;
 	}
 
-	public String getAuthor() {
+	public AuthorEnum getAuthor() {
 		return author;
 	}
 
-	public void setAuthor(String author) {
+	public void setAuthor(AuthorEnum author) {
 		this.author = author;
 	}
 
@@ -49,7 +49,7 @@ public class Blog {
 
 	@Override
 	public String toString() {
-		return "Blog [id=" + id + ", title=" + title + ", author=" + author + ", content=" + content + "]";
+		return "Blog [id=" + id + ", title=" + title + ", author=" + author.getName() + ", content=" + content + "]";
 	}
 
 }
