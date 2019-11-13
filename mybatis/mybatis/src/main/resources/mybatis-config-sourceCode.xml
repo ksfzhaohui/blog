@@ -44,15 +44,15 @@
 
 	<!-- 4.类型处理器（typeHandlers） -->
 	<typeHandlers>
-		<typeHandler javaType="string" jdbcType="VARCHAR" handler="com.mybatis.myTypeHandler.MyStringTypeHandler" />
+		<!-- <typeHandler javaType="string" jdbcType="VARCHAR" handler="com.mybatis.myTypeHandler.MyStringTypeHandler" />
 		<typeHandler javaType="string" handler="com.mybatis.myTypeHandler.MyStringTypeHandler" />
-		<!-- <typeHandler javaType="string" handler="com.mybatis.myTypeHandler.MyStringTypeHandler" /> -->
+		<typeHandler javaType="string" handler="com.mybatis.myTypeHandler.MyStringTypeHandler" /> -->
 		<typeHandler javaType="com.mybatis.vo.AuthorEnum" handler="org.apache.ibatis.type.EnumTypeHandler" />
 	</typeHandlers>
-	<!-- 5.自定义对象工厂 -->
+	<!-- 5.自定义对象工厂 
 	<objectFactory type="com.mybatis.myObjectFactory.MyObjectFactory">
 		<property name="name" value="MyObjectFactory" />
-	</objectFactory>
+	</objectFactory>-->
 
 	<!-- 6.配置环境 default缺省情况下使用哪个数据源配置 -->
 	<environments default="development">

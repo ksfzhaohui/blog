@@ -15,8 +15,7 @@ public class MyResultHandler implements ResultHandler<Blog> {
 	@Override
 	public void handleResult(ResultContext<? extends Blog> resultContext) {
 		Blog blog = resultContext.getResultObject();
-		System.out.println("before result=" + blog.toString());
-
+		System.out.println(blog.toString());
 		result.put(blog.getId(), blog);
 	}
 
