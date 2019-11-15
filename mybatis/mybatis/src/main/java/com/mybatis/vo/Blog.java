@@ -1,7 +1,13 @@
 package com.mybatis.vo;
 
-public class Blog {
+import java.io.Serializable;
 
+public class Blog implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private long id;
 	private String title;
 	private String author;
@@ -47,9 +53,9 @@ public class Blog {
 		this.content = content;
 	}
 
-	@Override
-	public String toString() {
-		return "Blog [id=" + id + ", title=" + title + ", author=" + author + ", content=" + content + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "Blog [id=" + id + ", title=" + title + ", author=" + author + ", content=" + content + "]";
+//	}
 
 }
