@@ -11,23 +11,19 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import com.mybatis.mapper.BlogMapper;
 import com.mybatis.vo.Blog;
 
-public class BlockingCacheBlogMain {
+public class CacheBlogMain3 {
 	public static void main(String[] args) throws IOException {
 		String resource = "mybatis-config-sourceCode.xml";
 		InputStream inputStream = Resources.getResourceAsStream(resource);
 		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+		SqlSession session = sqlSessionFactory.openSession();
 
 		new Thread(new Runnable() {
 
 			@Override
 			public void run() {
-				SqlSession session = sqlSessionFactory.openSession();
-				try {
-					BlogMapper<Blog> mapper = session.getMapper(BlogMapper.class);
-					System.out.println(mapper.selectBlog(160));
-				} finally {
-					session.close();
-				}
+				BlogMapper<Blog> mapper = session.getMapper(BlogMapper.class);
+				System.out.println(mapper.selectBlog(160));
 			}
 		}).start();
 
@@ -35,13 +31,8 @@ public class BlockingCacheBlogMain {
 
 			@Override
 			public void run() {
-				SqlSession session2 = sqlSessionFactory.openSession();
-				try {
-					BlogMapper<Blog> mapper = session2.getMapper(BlogMapper.class);
-					System.out.println(mapper.selectBlog(160));
-				} finally {
-					session2.close();
-				}
+				BlogMapper<Blog> mapper = session.getMapper(BlogMapper.class);
+				System.out.println(mapper.selectBlog(160));
 			}
 		}).start();
 

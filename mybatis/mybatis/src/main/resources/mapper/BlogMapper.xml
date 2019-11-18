@@ -18,7 +18,7 @@
 		author=#{author,javaType=string}
 	</select>
 
-	<cache readOnly="true"/>
+	<!-- <cache readOnly="false"  eviction="FIFO" blocking="true"/> -->
 	<!-- <cache 
 		blocking="true" 
 		eviction="FIFO" 
@@ -27,6 +27,11 @@
 		size="512" 
 		type="org.apache.ibatis.cache.impl.PerpetualCache">
 	</cache> -->
+	<cache 
+		eviction="FIFO" 
+		readOnly="true" 
+		size="512">
+	</cache>
 
 	<resultMap id="blogResultMap2" type="string">
 		<result property="title" column="title" />
@@ -47,7 +52,7 @@
 	<!--<select id="selectBlogMap" parameterType="hashmap" resultMap="blogResultMap"> -->
 	<!-- <select id="selectBlogMap" parameterType="hashmap" resultType="Map"> -->
 
-	<select id="selectBlog" parameterType="long" resultType="com.mybatis.vo.Blog" useCache="true">
+	<select id="selectBlog" parameterType="long" resultType="com.mybatis.vo.Blog" flushCache="true">
 		select *
 		from blog where id = #{id}
 	</select>

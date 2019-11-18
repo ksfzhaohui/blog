@@ -12,7 +12,7 @@ import org.apache.ibatis.cache.Cache;
  * @author hui.zhao.cfs
  *
  */
-public class MyCache implements Cache {
+public class MyCache implements Cache{
 
 	private String id;
 
