@@ -54,6 +54,12 @@
 	<objectFactory type="com.mybatis.myObjectFactory.MyObjectFactory">
 		<property name="name" value="MyObjectFactory" />
 	</objectFactory>-->
+	
+	<plugins>
+		<plugin interceptor="com.mybatis.plugin.MyPlugin">
+			<property name="dbType" value="mysql" />
+		</plugin>
+	</plugins>
 
 	<!-- 6.配置环境 default缺省情况下使用哪个数据源配置 -->
 	<environments default="development">
@@ -71,6 +77,7 @@
 			</dataSource>
 		</environment>
 	</environments>
+	
 	<!-- 7.引入映射器 -->
 	<mappers>
 		<mapper resource="mapper/BlogMapper.xml" />

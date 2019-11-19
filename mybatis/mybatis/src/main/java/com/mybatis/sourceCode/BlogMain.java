@@ -24,9 +24,9 @@ public class BlogMain {
 
 		SqlSession session = sqlSessionFactory.openSession();
 		try {
-			// select(session);
+			 select(session);
 //			selectHandler(session, sqlSessionFactory.getConfiguration());
-			selectMyHandler(session);
+//			selectMyHandler(session);
 			// insert(session);
 			// update(session);
 		} finally {
