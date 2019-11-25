@@ -164,3 +164,8 @@ Java相关基础包括JVM，线程，并发编程，网络编程，锁，内存�
 
 * [1.为什么Netty的FastThreadLocal速度快](https://github.com/ksfzhaohui/blog/blob/master/interview/%E4%B8%BA%E4%BB%80%E4%B9%88Netty%E7%9A%84FastThreadLocal%E9%80%9F%E5%BA%A6%E5%BF%AB.md "为什么Netty的FastThreadLocal速度快.md")
 
+## 8.联系我
+
+* [开源中国](https://my.oschina.net/OutOfMemory)  
+* [掘金](https://juejin.im/user/5c806d57e51d4526e619cacb)  
+* [segmentfault](https://segmentfault.com/u/ksfzhaohui)  
