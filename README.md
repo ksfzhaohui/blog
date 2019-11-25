@@ -2,6 +2,7 @@
 个人工作学习记录，主要围绕java基础，数据库，常用Java框架，中间件，遇到的问题以及技术总结等。
 
 ## 1.Java基础
+Java相关基础包括JVM，线程，并发编程，网络编程，锁，内存模型等；
 
 * [1.Java SPI机制分析](https://github.com/ksfzhaohui/blog/blob/master/SPI/Java%20SPI%E6%9C%BA%E5%88%B6%E5%88%86%E6%9E%90.md "Java SPI机制分析.md")
 * [2.谈谈Java任务的并行处理](https://github.com/ksfzhaohui/blog/blob/master/java8/%E8%B0%88%E8%B0%88Java%E4%BB%BB%E5%8A%A1%E7%9A%84%E5%B9%B6%E8%A1%8C%E5%A4%84%E7%90%86.md "谈谈Java任务的并行处理.md")
@@ -40,10 +41,8 @@
 ### 3.2 SpringBoot系列
 
 * [1.从SpringBoot整合Mybatis分析自动配置](https://github.com/ksfzhaohui/blog/blob/master/springboot/%E4%BB%8ESpringBoot%E6%95%B4%E5%90%88Mybatis%E5%88%86%E6%9E%90%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE.md "从SpringBoot整合Mybatis分析自动配置.md")
-* 
 
 ### 3.3 SpringSession系列
-
 * [1.Nginx+Tomcat关于Session的管理](https://github.com/ksfzhaohui/blog/blob/master/%E5%88%86%E5%B8%83%E5%BC%8F/Nginx%2BTomcat%E5%85%B3%E4%BA%8ESession%E7%9A%84%E7%AE%A1%E7%90%86.md "Nginx+Tomcat关于Session的管理.md")
 * [2.Tomcat Session管理分析](https://github.com/ksfzhaohui/blog/blob/master/%E5%88%86%E5%B8%83%E5%BC%8F/Tomcat%20Session%E7%AE%A1%E7%90%86%E5%88%86%E6%9E%90.md "Tomcat Session管理分析.md")
 * [3.Spring-Session基于Redis管理Session](https://github.com/ksfzhaohui/blog/blob/master/%E5%88%86%E5%B8%83%E5%BC%8F/Spring-Session%E5%9F%BA%E4%BA%8ERedis%E7%AE%A1%E7%90%86Session.md "Spring-Session基于Redis管理Session.md")
@@ -60,6 +59,8 @@
 * [5.Raft算法浅析](https://github.com/ksfzhaohui/blog/blob/master/%E5%88%86%E5%B8%83%E5%BC%8F/Raft%E7%AE%97%E6%B3%95%E6%B5%85%E6%9E%90.md "Raft算法浅析.md")
 
 ### 4.2 分布式配置中心
+主流的配置中心有很多如：Apollo，Nacos，Spring-Cloud-Config等
+
 #### 4.2.1 Spring-Cloud-Config系列
 
 * [1.Spring-Cloud-Config快速开始](https://github.com/ksfzhaohui/blog/blob/master/spring-cloud-config/1.Spring-Cloud-Config%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B.md "1.Spring-Cloud-Config快速开始.md")
@@ -72,6 +73,7 @@
 * [3.Zookeeper实现参数的集中式管理](https://github.com/ksfzhaohui/blog/blob/master/dynamicConf/Zookeeper%E5%AE%9E%E7%8E%B0%E5%8F%82%E6%95%B0%E7%9A%84%E9%9B%86%E4%B8%AD%E5%BC%8F%E7%AE%A1%E7%90%86.md "Zookeeper实现参数的集中式管理.md")
 
 ### 4.3 消息队列
+主流的消息队列有：RocketMQ，Kafka，ActiveMQ，RabbitMQ等；
 #### 4.3.1 消息队列基础
 
 * [1.JMS消息确认和事务](https://github.com/ksfzhaohui/blog/blob/master/jms/1.JMS%E6%B6%88%E6%81%AF%E7%A1%AE%E8%AE%A4%E5%92%8C%E4%BA%8B%E5%8A%A1.md "1.JMS消息确认和事务.md")
@@ -88,6 +90,7 @@
 * [1.Kafka快速开始](https://github.com/ksfzhaohui/blog/blob/master/%E5%88%86%E5%B8%83%E5%BC%8F/Kafka%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B.md "Kafka快速开始.md")
 
 ### 4.4 RPC框架
+远程方法调用成熟产品很多常见的有：dubbo，gRpc，Thrift，还有spring cloud那一套；
 #### 4.4.1 Dubbo系列
 
 * [1.Dubbo分析之Serialize层](https://github.com/ksfzhaohui/blog/blob/master/dubbo/1.Dubbo%E5%88%86%E6%9E%90%E4%B9%8BSerialize%E5%B1%82.md "1.Dubbo分析之Serialize层.md")
@@ -98,14 +101,14 @@
 * [6.Dubbo分析之Registry层](https://github.com/ksfzhaohui/blog/blob/master/dubbo/Dubbo%E5%88%86%E6%9E%90%E4%B9%8BRegistry%E5%B1%82.md "Dubbo分析之Registry层.md")
 
 ### 4.5 分布式数据库
-
+数据库访问层常见：mycat，sharding-JDBC，Atlas等
 #### 4.5.1 MyCat系列
 
 * [1.Demo入门Mycat](https://github.com/ksfzhaohui/blog/blob/master/%E5%88%86%E5%B8%83%E5%BC%8F/Demo%E5%85%A5%E9%97%A8Mycat.md "Demo入门Mycat.md")
 * [2.Demo之Mycat读写分离](https://github.com/ksfzhaohui/blog/blob/master/%E5%88%86%E5%B8%83%E5%BC%8F/Demo%E4%B9%8BMycat%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB.md "Demo之Mycat读写分离.md")
 
 ### 4.6 分布式调度
-
+最常用的Quartz，但是quartz在分布式调度的时候并不完美，所有出现了一些对其扩展的产品如：XXL-Job,Elastic-Job等；
 #### 4.6.1 Quartz分析
 
 * [1.Spring整合Quartz分布式调度](https://github.com/ksfzhaohui/blog/blob/master/quartz/1.Spring%E6%95%B4%E5%90%88Quartz%E5%88%86%E5%B8%83%E5%BC%8F%E8%B0%83%E5%BA%A6.md "1.Spring整合Quartz分布式调度.md")
@@ -114,16 +117,23 @@
 * [4.基于Netty+Zookeeper+Quartz调度分析](https://github.com/ksfzhaohui/blog/blob/master/quartz/4.%E5%9F%BA%E4%BA%8ENetty%2BZookeeper%2BQuartz%E8%B0%83%E5%BA%A6%E5%88%86%E6%9E%90.md "4.基于Netty+Zookeeper+Quartz调度分析.md")
 
 ### 4.7 搜索引擎
+开源的有ElasticSearch，商业的有Splunk等；
 
 #### 4.7.1 ElasticSearch系列
 
 * [1.基于ELK5.1-ElasticSearch, Logstash, Kibana的一次整合测试](https://github.com/ksfzhaohui/blog/blob/master/%E5%88%86%E5%B8%83%E5%BC%8F/%E5%9F%BA%E4%BA%8EELK5.1-ElasticSearch%2C%20Logstash%2C%20Kibana%E7%9A%84%E4%B8%80%E6%AC%A1%E6%95%B4%E5%90%88%E6%B5%8B%E8%AF%95.md "基于ELK5.1-ElasticSearch, Logstash, Kibana的一次整合测试.md")
 
 ### 4.8 分布式链路追踪
-
+开源的产品有：zipkin，cat等
 #### 4.8.1 Zipkin系列
 
 * [1.Zipkin快速开始](https://github.com/ksfzhaohui/blog/blob/master/%E5%88%86%E5%B8%83%E5%BC%8F/Zipkin%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B.md "Zipkin快速开始.md")
+
+### 4.9 分布式缓存
+缓存服务器常用的就是redis，memcached等；
+
+### 4.10 注册中心
+常用的有Zookeeper，eruka等；
 
 ## 5.遇到的问题
 整理工作中遇到的一些典型问题，进行分析汇总；
@@ -134,7 +144,6 @@
 * [4.关于Jackson默认丢失Bigdecimal精度问题分析](https://github.com/ksfzhaohui/blog/blob/master/serialization/1.%E5%85%B3%E4%BA%8EJackson%E9%BB%98%E8%AE%A4%E4%B8%A2%E5%A4%B1Bigdecimal%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90.md "1.关于Jackson默认丢失Bigdecimal精度问题分析.md")
 
 ## 6.技术总结
-
 
 * [1.如何设计一个安全的对外接口](https://github.com/ksfzhaohui/blog/blob/master/java8/%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%AE%89%E5%85%A8%E7%9A%84%E5%AF%B9%E5%A4%96%E6%8E%A5%E5%8F%A3.md "如何设计一个安全的对外接口.md")
 * [2.如何设计一个本地缓存](https://github.com/ksfzhaohui/blog/blob/master/java8/%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98.md "如何设计一个本地缓存.md")
