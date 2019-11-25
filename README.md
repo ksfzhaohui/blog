@@ -1,4 +1,11 @@
-﻿# BLOG
+[![license](https://badgen.net/badge/license/MIT/blue)](https://github.com/ksfzhaohui/blog/blob/master/LICENSE)
+[![stars](https://badgen.net/github/stars/ksfzhaohui/blog)](https://github.com/ksfzhaohui/blog/stargazers)
+[![forks](https://badgen.net/github/forks/ksfzhaohui/blog)](https://github.com/ksfzhaohui/blog/network/members)
+[![help-wanted](https://badgen.net/github/label-issues/ksfzhaohui/blog/help%20wanted/open)](https://github.com/ksfzhaohui/blog/labels/help%20wanted)
+[![issues](https://badgen.net/github/open-issues/ksfzhaohui/blog)](https://github.com/ksfzhaohui/blog/issues)
+[![PRs Welcome](https://badgen.net/badge/PRs/welcome/green)](http://makeapullrequest.com)
+
+# BLOG
 个人工作学习记录，主要围绕java基础，数据库，常用Java框架，中间件，遇到的问题以及技术总结等。
 
 ## 1.Java基础
