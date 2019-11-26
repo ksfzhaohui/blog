@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  *
  */
 public class Limiter1 {
-
+	
 	private static int concurrent_number = 10;
 
 	private static AtomicInteger limiter = new AtomicInteger();
