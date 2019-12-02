@@ -53,9 +53,9 @@ public class Blog implements Serializable{
 		this.content = content;
 	}
 
-//	@Override
-//	public String toString() {
-//		return "Blog [id=" + id + ", title=" + title + ", author=" + author + ", content=" + content + "]";
-//	}
+	@Override
+	public String toString() {
+		return "Blog [id=" + id + ", title=" + title + ", author=" + author + ", content=" + content + "]";
+	}
 
 }

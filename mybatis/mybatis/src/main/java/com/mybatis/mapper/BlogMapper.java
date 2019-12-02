@@ -45,4 +45,6 @@ public interface BlogMapper<T> extends ParentMapper {
 	public List<Blog> selectBlogsByRowBounds(String author, RowBounds rowBounds);
 
 	public void insertBlog(Blog blog);
+	
+	public List<Blog> selectBlogs(String author,RowBounds rowBounds);
 }
