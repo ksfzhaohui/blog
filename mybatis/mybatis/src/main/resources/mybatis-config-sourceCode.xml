@@ -32,7 +32,7 @@
 		<setting name="localCacheScope" value="SESSION" />
 		<setting name="jdbcTypeForNull" value="OTHER" />
 		<setting name="lazyLoadTriggerMethods" value="equals,clone,hashCode,toString" />
-		 <!-- <setting name="localCacheScope" value="STATEMENT"/> -->
+		<!-- <setting name="localCacheScope" value="STATEMENT"/> -->
 
 		<!-- 是否使用真实的参数名称 -->
 		<setting name="useActualParamName" value="false" />
@@ -45,19 +45,25 @@
 
 	<!-- 4.类型处理器（typeHandlers） -->
 	<typeHandlers>
-		<!-- <typeHandler javaType="string" jdbcType="VARCHAR" handler="com.mybatis.myTypeHandler.MyStringTypeHandler" />
-		<typeHandler javaType="string" handler="com.mybatis.myTypeHandler.MyStringTypeHandler" />
-		<typeHandler javaType="string" handler="com.mybatis.myTypeHandler.MyStringTypeHandler" /> -->
-		<typeHandler javaType="com.mybatis.vo.AuthorEnum" handler="org.apache.ibatis.type.EnumTypeHandler" />
+		<!-- <typeHandler javaType="string" jdbcType="VARCHAR" handler="com.mybatis.myTypeHandler.MyStringTypeHandler" 
+			/> <typeHandler javaType="string" handler="com.mybatis.myTypeHandler.MyStringTypeHandler" 
+			/> <typeHandler javaType="string" handler="com.mybatis.myTypeHandler.MyStringTypeHandler" 
+			/> -->
+		<typeHandler javaType="com.mybatis.vo.AuthorEnum"
+			handler="org.apache.ibatis.type.EnumTypeHandler" />
 	</typeHandlers>
-	<!-- 5.自定义对象工厂 
-	<objectFactory type="com.mybatis.myObjectFactory.MyObjectFactory">
-		<property name="name" value="MyObjectFactory" />
-	</objectFactory>-->
-	
+	<!-- 5.自定义对象工厂 <objectFactory type="com.mybatis.myObjectFactory.MyObjectFactory"> 
+		<property name="name" value="MyObjectFactory" /> </objectFactory> -->
+
 	<plugins>
 		<plugin interceptor="com.mybatis.plugin.MyPlugin">
 			<property name="dbType" value="mysql" />
+		</plugin>
+
+		<plugin interceptor="com.github.pagehelper.PageInterceptor">
+			<property name="helperDialect" value="mysql" />
+			<property name="offsetAsPageNum" value="true" />
+			<property name="rowBoundsWithCount" value="true" />
 		</plugin>
 	</plugins>
 
@@ -77,7 +83,7 @@
 			</dataSource>
 		</environment>
 	</environments>
-	
+
 	<!-- 7.引入映射器 -->
 	<mappers>
 		<mapper resource="mapper/BlogMapper.xml" />
