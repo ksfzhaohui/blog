@@ -27,14 +27,15 @@ public class BlogRowBoundsMain {
 		SqlSession session = sqlSessionFactory.openSession();
 		try {
 			BlogMapper<Blog> mapper = session.getMapper(BlogMapper.class);
-			int pageSize = 2;
-			int totalCount = 5;
+			int pageSize = 50;
+			int totalCount = 55;
 			int loopCount = (totalCount % pageSize == 0) ? totalCount / pageSize : totalCount / pageSize + 1;
 			for (int i = 1; i <= loopCount; i++) {
-				List<Blog> blogs = mapper.selectBlogs("zhaohui", new RowBounds(i, pageSize));
+				List<Blog> blogs = mapper.selectBlogs("ksfzhaohui", new RowBounds(i, pageSize));
 				for (Blog b : blogs) {
 					System.out.println(b);
 				}
+				System.out.println("============================");
 			}
 		} finally {
 			session.close();
