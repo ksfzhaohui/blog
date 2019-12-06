@@ -44,7 +44,7 @@ Java相关基础包括JVM，线程，并发编程，网络编程，锁，内存�
 * [5.Mybatis之类型处理器](https://github.com/ksfzhaohui/blog/blob/master/mybatis/Mybatis%E4%B9%8B%E7%B1%BB%E5%9E%8B%E5%A4%84%E7%90%86%E5%99%A8.md "Mybatis之类型处理器.md")  
 * [6.Mybatis之结果处理器](https://github.com/ksfzhaohui/blog/blob/master/mybatis/Mybatis%E4%B9%8B%E7%BB%93%E6%9E%9C%E5%A4%84%E7%90%86%E5%99%A8.md "Mybatis之结果处理器.md")  
 * [7.Mybatis之缓存分析](https://github.com/ksfzhaohui/blog/blob/master/mybatis/Mybatis%E4%B9%8B%E7%BC%93%E5%AD%98%E5%88%86%E6%9E%90.md "Mybatis之缓存分析.md")  
-* [8.Mybatis之插件分析](https://github.com/ksfzhaohui/blog/blob/master/mybatis/Mybatis%E4%B9%8B%E5%AF%B9%E8%B1%A1%E5%B7%A5%E5%8E%82.md "Mybatis之插件分析.md")  
+* [8.Mybatis之插件分析](https://github.com/ksfzhaohui/blog/blob/master/mybatis/Mybatis%E4%B9%8B%E6%8F%92%E4%BB%B6%E5%88%86%E6%9E%90.md "Mybatis之插件分析.md")  
 
 ### 3.2 SpringBoot系列
 
