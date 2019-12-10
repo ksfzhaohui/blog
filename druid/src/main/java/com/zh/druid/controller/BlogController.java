@@ -27,6 +27,9 @@ public class BlogController {
 		for (int currentPage = 0; currentPage < totalPages; currentPage++) {
 			List<Blog> blogs = blogRepository.selectBlogs("zhaohui", new RowBounds(currentPage * pageSize, pageSize));
 			System.err.println("currentPage=" + (currentPage + 1) + ",current size:" + blogs.size());
+			for(Blog blog:blogs){
+				System.out.println(blog);
+			}
 		}
 		return "ok";
 	}

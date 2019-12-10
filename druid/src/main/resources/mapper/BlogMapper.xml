@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zh.druid.mapper.BlogMapper">
 
-	<select id="selectBlogs" parameterType="string" resultType="blog" resultSetType="SCROLL_INSENSITIVE ">
+	<select id="selectBlogs" parameterType="string" resultType="blog" resultSetType="SCROLL_INSENSITIVE">
 		select * from blog where author = #{author}
 	</select>
 

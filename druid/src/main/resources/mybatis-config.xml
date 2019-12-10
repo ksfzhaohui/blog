@@ -42,13 +42,13 @@
 		<typeAlias type="com.zh.druid.vo.Blog" alias="blog" />
 	</typeAliases>
 	
-	<!-- <plugins>
+	<plugins>
 		<plugin interceptor="com.github.pagehelper.PageInterceptor">
 			<property name="helperDialect" value="mysql" />
-			<property name="offsetAsPageNum" value="true" />
-			<property name="rowBoundsWithCount" value="true" />
+			<!-- <property name="offsetAsPageNum" value="true" />
+			<property name="rowBoundsWithCount" value="true" /> -->
 		</plugin>
-	</plugins> -->
+	</plugins>
 
 	<!-- 5.自定义对象工厂 <objectFactory type="com.mybatis.myObjectFactory.MyObjectFactory"> 
 		<property name="name" value="MyObjectFactory" /> </objectFactory> -->
