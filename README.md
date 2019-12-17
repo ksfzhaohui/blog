@@ -144,6 +144,10 @@ Java相关基础包括JVM，线程，并发编程，网络编程，锁，内存�
 ### 4.10 注册中心
 常用的有Zookeeper，eruka等；
 
+### 4.11 Kubernetes
+* [1.Kubernetes入门篇](https://github.com/ksfzhaohui/blog/blob/master/Kubernetes/Kubernetes%E5%85%A5%E9%97%A8%E7%AF%87.md "Kubernetes入门篇.md")
+
+
 ## 5.遇到的问题
 整理工作中遇到的一些典型问题，进行分析汇总；
 
