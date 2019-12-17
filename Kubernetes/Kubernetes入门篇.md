@@ -58,19 +58,19 @@ sudo yum-config-manager \
 安装最新稳定版本的docker
 
 ```
-sudo yum?install?-y docker-ce
+sudo yum install -y docker-ce
 ```
 
 如果想安装指定版本的Docker，可以查看一下版本并安装
 
 ```
-yum?list?docker-ce --showduplicates |?sort?-r
+yum list docker-ce --showduplicates | sort -r
 ```
 
 可以指定版本安装,版本号可以忽略:和el7，如 docker-ce-19.03.4
 
 ```
-sudo yum?install?docker-ce-<VERSION?STRING>
+sudo yum install docker-ce-<VERSION STRING>
 ```
 
 ### 5.查看版本
@@ -94,7 +94,7 @@ Client: Docker Engine - Community
 启动docker
 
 ```
-sudo systemctl?start?docker
+sudo systemctl start docker
 ```
 
 验证是否启动成功
@@ -107,7 +107,7 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 如果没有启动成功会显示Cannot connect to the Docker daemon；
 
 ```
-sudo systemctl?stop?docker
+sudo systemctl stop docker
 ```
 
 关闭使用stop命令即可；
@@ -117,13 +117,13 @@ sudo systemctl?stop?docker
 更新docker
 
 ```
-sudo yum?update?docker-ce
+sudo yum update docker-ce
 ```
 
 卸载docker
 
 ```
-sudo yum?remove?docker-ce
+sudo yum remove docker-ce
 ```
 
 ### 8.安装遇到的问题
