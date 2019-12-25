@@ -1,0 +1,17 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: corn-batch-job
+spec:
+  schedule: "0-59 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            app: corn-batch-job
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: main
+            image: ksfzhaohui/batch-job
