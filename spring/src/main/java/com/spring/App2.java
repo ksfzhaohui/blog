@@ -11,5 +11,6 @@ public class App2 {
 		HelloBean helloBean = (HelloBean) ctx.getBean("hello");
 		System.out.println(helloBean.hello("hello world2"));
 
+		((ClassPathXmlApplicationContext) ctx).close();
 	}
 }
