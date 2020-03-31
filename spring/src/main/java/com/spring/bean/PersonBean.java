@@ -15,7 +15,7 @@ public class PersonBean
 	private String name;
 
 	public PersonBean() {
-		System.out.println("PersonService类构造方法");
+		System.out.println("PersonBean类构造方法");
 	}
 
 	public String getName() {
