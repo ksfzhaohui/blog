@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "https://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="cdBean1" class="com.spring.bean.CDBean1">
+		<property name="cdBean2" ref="cdBean2"></property>
+	</bean>
+	<bean id="cdBean2" class="com.spring.bean.CDBean2">
+		<property name="cdBean1" ref="cdBean1"></property>
+	</bean>
+</beans>
