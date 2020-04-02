@@ -3,6 +3,13 @@ package com.data.algorithm.priorityQueue;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
+/**
+ * 通过堆实现，具体说是通过完全二叉树（complete binary tree）实现的小顶堆（任意一个非叶子节点的权值，都不大于其左右子节点的权值），
+ * 也就意味着可以通过数组来作为 PriorityQueue 的底层实现。
+ * 
+ * @author hui.zhao.cfs
+ *
+ */
 public class PriorityQueueTest {
 
 	public static void main(String[] args) {
