@@ -11,7 +11,7 @@ import java.util.Arrays;
 public class MaxHeap {
 
 	public static void main(String[] args) {
-		int[] arr = { 50, 10, 90, 30, 70, 40, 80, 60, 20 };
+		int[] arr = { 50, 10, 90, 30, 70, 40, 80, 60,20 };
 		heapSort(arr);
 		System.out.println(Arrays.toString(arr));
 	}

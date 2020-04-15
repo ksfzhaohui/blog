@@ -48,13 +48,13 @@ public class TwoThread {
 
 				if (number.flag) {
 					try {
-						LOCK.lock();
+						//LOCK.lock();
 						System.out.println(Thread.currentThread().getName() + "+-+" + number.start);
 						number.start++;
 						number.flag = false;
 
 					} finally {
-						LOCK.unlock();
+						//LOCK.unlock();
 					}
 				}
 			}
@@ -78,13 +78,13 @@ public class TwoThread {
 
 				if (!number.flag) {
 					try {
-						LOCK.lock();
+						//LOCK.lock();
 						System.out.println(Thread.currentThread().getName() + "+-+" + number.start);
 						number.start++;
 						number.flag = true;
 
 					} finally {
-						LOCK.unlock();
+						//LOCK.unlock();
 					}
 				}
 			}

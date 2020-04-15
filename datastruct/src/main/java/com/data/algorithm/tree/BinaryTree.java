@@ -1,4 +1,4 @@
-package com.data.struct;
+package com.data.algorithm.tree;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;

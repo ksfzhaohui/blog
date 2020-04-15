@@ -1,4 +1,4 @@
-package com.data.struct;
+package com.data.algorithm.linked;
 
 /**
  * 单向链表

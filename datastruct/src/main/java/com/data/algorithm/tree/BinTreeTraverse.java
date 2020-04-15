@@ -1,7 +1,9 @@
-package com.data.struct;
+package com.data.algorithm.tree;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * 功能：把一个数组的值存入二叉树中，然后进行3种方式的遍历
@@ -47,21 +49,17 @@ public class BinTreeTraverse {
 		// 对前lastParentIndex-1个父节点按照父节点与孩子节点的数字关系建立二叉树
 		for (int parentIndex = 0; parentIndex < array.length / 2 - 1; parentIndex++) {
 			// 左孩子
-			nodeList.get(parentIndex).leftChild = nodeList
-					.get(parentIndex * 2 + 1);
+			nodeList.get(parentIndex).leftChild = nodeList.get(parentIndex * 2 + 1);
 			// 右孩子
-			nodeList.get(parentIndex).rightChild = nodeList
-					.get(parentIndex * 2 + 2);
+			nodeList.get(parentIndex).rightChild = nodeList.get(parentIndex * 2 + 2);
 		}
 		// 最后一个父节点:因为最后一个父节点可能没有右孩子，所以单独拿出来处理
 		int lastParentIndex = array.length / 2 - 1;
 		// 左孩子
-		nodeList.get(lastParentIndex).leftChild = nodeList
-				.get(lastParentIndex * 2 + 1);
+		nodeList.get(lastParentIndex).leftChild = nodeList.get(lastParentIndex * 2 + 1);
 		// 右孩子,如果数组的长度为奇数才建立右孩子
 		if (array.length % 2 == 1) {
-			nodeList.get(lastParentIndex).rightChild = nodeList
-					.get(lastParentIndex * 2 + 2);
+			nodeList.get(lastParentIndex).rightChild = nodeList.get(lastParentIndex * 2 + 2);
 		}
 	}
 
@@ -95,6 +93,83 @@ public class BinTreeTraverse {
 		inOrderTraverse(node.leftChild);
 		System.out.print(node.data + " ");
 		inOrderTraverse(node.rightChild);
+	}
+	
+	public static List<Node> inorder23(Node node){
+		List<Node> list=new ArrayList<>();
+		Stack<Node> stack=new Stack<>();
+		
+		while(node!=null || !stack.isEmpty()){
+			while(node!=null){
+				stack.push(node);
+				node=node.leftChild;
+			}
+			if(!stack.isEmpty()){
+				Node temp=stack.pop();
+				list.add(stack.pop());
+				node=temp.rightChild;
+			}
+		}
+		return list;
+	}
+	
+
+	public static void inOrder2(Node node) {
+		List<Node> list = new ArrayList<Node>();
+		Stack<Node> stack = new Stack<Node>();
+
+		while (node != null || !stack.isEmpty()) {
+			while (node != null) {
+				stack.push(node);
+				node = node.leftChild;
+			}
+
+			Node temp = stack.pop();
+			list.add(temp);
+			node = temp.rightChild;
+		}
+	}
+
+	/**
+	 * 中序非递归遍历
+	 * 
+	 * @param root
+	 * @return
+	 */
+	public static ArrayList inOrder1(Node root) {
+		ArrayList alist = new ArrayList();
+		Stack<Node> stack = new Stack<Node>();
+		Node p = root;
+		while (p != null || !stack.empty()) {
+			while (p != null) {
+				stack.push(p);
+				p = p.leftChild;
+			}
+			if (!stack.empty()) {
+				Node temp = stack.pop();
+				alist.add(temp.data);
+				p = temp.rightChild;
+			}
+		}
+		return alist;
+	}
+	
+	
+	public static List<Node> inOrder_1(Node root){
+		List<Node> list=new ArrayList<>();
+		Stack<Node> stack=new Stack<>();
+		while(root!=null || !stack.isEmpty()){
+			while(root!=null){
+				stack.push(root.leftChild);
+			}
+			
+			if(!stack.isEmpty()){
+				Node temp=stack.pop();
+				list.add(temp);
+				root=temp.rightChild;
+			}
+		}
+		return list;
 	}
 
 	/**

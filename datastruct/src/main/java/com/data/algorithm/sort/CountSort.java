@@ -36,6 +36,14 @@ public class CountSort {
 			}
 			countArray[value] += 1;
 		}
+		
+		for(int i=0;i<countArray.length;i++){
+			if(countArray[i]>0){
+				for(int k=0;k<countArray[i];k++){
+					System.out.print(i+"==");
+				}
+			}
+		}
 
 		//对所有的计数累加
 		for (int i = 1; i < countArray.length; i++) {

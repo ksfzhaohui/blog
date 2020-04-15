@@ -1,4 +1,4 @@
-package com.data.struct;
+package com.data.algorithm.linked;
 
 /**
  * 链表反转
