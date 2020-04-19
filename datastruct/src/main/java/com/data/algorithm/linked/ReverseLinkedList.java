@@ -44,9 +44,11 @@ public class ReverseLinkedList {
 		LinkedNode n1 = new LinkedNode(1);
 		LinkedNode n2 = new LinkedNode(2);
 		LinkedNode n3 = new LinkedNode(3);
+		LinkedNode n4 = new LinkedNode(4);
 
 		n1.next = n2;
 		n2.next = n3;
+		n3.next = n4;
 
 		list(n1);
 		// list(reverse(n1));

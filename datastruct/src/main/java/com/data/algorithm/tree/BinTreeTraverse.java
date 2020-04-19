@@ -1,6 +1,8 @@
 package com.data.algorithm.tree;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
@@ -79,6 +81,23 @@ public class BinTreeTraverse {
 		preOrderTraverse(node.rightChild);
 	}
 
+	public static List<Node> preOrderTraverse2(Node node) {
+		List<Node> list = new ArrayList<>();
+		Stack<Node> stack = new Stack<>();
+		stack.push(node);
+
+		while (!stack.isEmpty()) {
+			Node temp = stack.pop();
+			if (temp != null) {
+				list.add(temp);
+				stack.push(temp.rightChild);
+				stack.push(temp.leftChild);
+			}
+		}
+
+		return list;
+	}
+
 	/**
 	 * 中序遍历
 	 * 
@@ -94,79 +113,20 @@ public class BinTreeTraverse {
 		System.out.print(node.data + " ");
 		inOrderTraverse(node.rightChild);
 	}
-	
-	public static List<Node> inorder23(Node node){
-		List<Node> list=new ArrayList<>();
-		Stack<Node> stack=new Stack<>();
-		
-		while(node!=null || !stack.isEmpty()){
-			while(node!=null){
-				stack.push(node);
-				node=node.leftChild;
-			}
-			if(!stack.isEmpty()){
-				Node temp=stack.pop();
-				list.add(stack.pop());
-				node=temp.rightChild;
-			}
-		}
-		return list;
-	}
-	
 
-	public static void inOrder2(Node node) {
-		List<Node> list = new ArrayList<Node>();
-		Stack<Node> stack = new Stack<Node>();
+	public static List<Node> inOrderTraverse2(Node node) {
+		List<Node> list = new ArrayList<>();
+		Stack<Node> stack = new Stack<>();
 
 		while (node != null || !stack.isEmpty()) {
 			while (node != null) {
 				stack.push(node);
 				node = node.leftChild;
 			}
-
-			Node temp = stack.pop();
-			list.add(temp);
-			node = temp.rightChild;
-		}
-	}
-
-	/**
-	 * 中序非递归遍历
-	 * 
-	 * @param root
-	 * @return
-	 */
-	public static ArrayList inOrder1(Node root) {
-		ArrayList alist = new ArrayList();
-		Stack<Node> stack = new Stack<Node>();
-		Node p = root;
-		while (p != null || !stack.empty()) {
-			while (p != null) {
-				stack.push(p);
-				p = p.leftChild;
-			}
-			if (!stack.empty()) {
+			if (!stack.isEmpty()) {
 				Node temp = stack.pop();
-				alist.add(temp.data);
-				p = temp.rightChild;
-			}
-		}
-		return alist;
-	}
-	
-	
-	public static List<Node> inOrder_1(Node root){
-		List<Node> list=new ArrayList<>();
-		Stack<Node> stack=new Stack<>();
-		while(root!=null || !stack.isEmpty()){
-			while(root!=null){
-				stack.push(root.leftChild);
-			}
-			
-			if(!stack.isEmpty()){
-				Node temp=stack.pop();
 				list.add(temp);
-				root=temp.rightChild;
+				node = temp.rightChild;
 			}
 		}
 		return list;
@@ -188,6 +148,22 @@ public class BinTreeTraverse {
 		System.out.print(node.data + " ");
 	}
 
+	public static List<Node> postOrderTraverse2(Node root) {
+		Deque<Node> stack = new LinkedList<>();
+		stack.push(root);
+		List<Node> ret = new ArrayList<>();
+		while (!stack.isEmpty()) {
+			Node node = stack.pop();
+			if (node != null) {
+				ret.add(node);
+				stack.push(node.leftChild);
+				stack.push(node.rightChild);
+			}
+		}
+		Collections.reverse(ret);
+		return ret;
+	}
+
 	public static void main(String[] args) {
 		BinTreeTraverse binTree = new BinTreeTraverse();
 		binTree.createBinTree();
@@ -197,13 +173,28 @@ public class BinTreeTraverse {
 		System.out.println("先序遍历：");
 		preOrderTraverse(root);
 		System.out.println();
+		List<Node> preList = preOrderTraverse2(root);
+		for (Node node : preList) {
+			System.out.print(node.data + " ");
+		}
+		System.out.println();
 
 		System.out.println("中序遍历：");
 		inOrderTraverse(root);
 		System.out.println();
+		List<Node> inList = inOrderTraverse2(root);
+		for (Node node : inList) {
+			System.out.print(node.data + " ");
+		}
+		System.out.println();
 
 		System.out.println("后序遍历：");
 		postOrderTraverse(root);
+		System.out.println();
+		List<Node> postList = postOrderTraverse2(root);
+		for (Node node : postList) {
+			System.out.print(node.data + " ");
+		}
 	}
 
 }
