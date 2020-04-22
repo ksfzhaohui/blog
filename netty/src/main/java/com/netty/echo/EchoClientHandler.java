@@ -1,4 +1,4 @@
-package com.netty;
+package com.netty.echo;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -31,6 +31,7 @@ public class EchoClientHandler extends ChannelInboundHandlerAdapter {
 
 	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg) {
+		System.out.println("client receive msg="+msg);
 		ctx.write(msg);
 	}
 

@@ -1,4 +1,4 @@
-package com.netty;
+package com.netty.echo;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
