@@ -9,7 +9,7 @@ import java.util.Set;
  * @author hui.zhao.cfs
  *
  */
-public class L3 {
+public class 无重复字符的最长子串 {
 
 	public static int lengthOfLongestSubstring(String s) {
 		int n = s.length();

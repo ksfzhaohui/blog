@@ -1,7 +1,7 @@
 package com.data.algorithm.leetcode;
 
 /**
- * 给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。
+ * L5 给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。
  * 
  * 示例 1：
  * 
@@ -10,7 +10,7 @@ package com.data.algorithm.leetcode;
  * @author hui.zhao.cfs
  *
  */
-public class L5 {
+public class 最长回文子串 {
 
 	public boolean isPalindromic(String s) {
 		int len = s.length();
@@ -55,5 +55,39 @@ public class L5 {
 				}
 			}
 		return maxPal;
+	}
+
+	public static String palindrome(String s, int l, int r) {
+		boolean flag=false;
+		while (l >= 0 && r < s.length() && s.charAt(l) == s.charAt(r)) {
+			// 向两边展开
+			l--;
+			r++;
+			flag=true;
+		}
+		if(flag){
+			return s.substring(l + 1, r );
+		}
+		return "";
+	}
+
+	public static String longestPalindrome3(String s) {
+		String res = "";
+		for (int i = 0; i < s.length(); i++) {
+			String r1 = palindrome(s, i, i);
+			String r2 = palindrome(s, i, i + 1);
+
+			res = res.length() > r1.length() ? res : r1;
+			res = res.length() > r2.length() ? res : r2;
+
+		}
+		return res;
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(longestPalindrome3("aacxycaa"));
+		System.out.println(longestPalindrome3("aba"));
+		System.out.println(longestPalindrome3("abbaccsss"));
+		System.out.println(longestPalindrome3("ccabbadd"));
 	}
 }
