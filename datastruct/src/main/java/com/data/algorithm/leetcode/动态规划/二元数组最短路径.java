@@ -1,4 +1,4 @@
-package com.data.algorithm.leetcode;
+package com.data.algorithm.leetcode.动态规划;
 
 import java.util.HashMap;
 import java.util.Map;
