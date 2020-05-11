@@ -1,4 +1,4 @@
-package com.data.algorithm.leetcode;
+package com.data.algorithm.leetcode.动态规划;
 
 public class 最长公共子序列 {
 
@@ -31,12 +31,13 @@ public class 最长公共子序列 {
 		if (a[i] == b[j]) {
 			return 1 + findLCS(a, i + 1, b, j + 1);
 		} else {
-			return Math.max(findLCS(a, i + 1, b, j), findLCS(a, i, b, j + 1));
+			//return Math.max(findLCS(a, i + 1, b, j), findLCS(a, i, b, j + 1));
+			return findLCS(a, i + 1, b, j);
 		}
 	}
-	
+
 	public static void main(String[] args) {
-		System.out.println(longestCommonSubsequence("abcde", "ace"));
+		System.out.println(longestCommonSubsequence("abcdedft", "acebt"));
 	}
 
 }
