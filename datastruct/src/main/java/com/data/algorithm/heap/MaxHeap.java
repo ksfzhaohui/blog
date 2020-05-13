@@ -11,9 +11,40 @@ import java.util.Arrays;
 public class MaxHeap {
 
 	public static void main(String[] args) {
-		int[] arr = { 50, 10, 90, 30, 70, 40, 80, 60,20 };
+		int[] arr = { 50, 10, 90, 30, 70, 40, 80, 60, 20 };
 		heapSort(arr);
 		System.out.println(Arrays.toString(arr));
+
+		int[] arr2 = { 50, 10, 90, 30, 70, 40, 80, 60, 20 };
+		heapSort2(arr2);
+		System.out.println(Arrays.toString(arr2));
+	}
+
+	private static void heapSort2(int[] arr) {
+		for (int i = arr.length / 2; i >= 0; i--) {
+			sort2(arr, i);
+		}
+	}
+
+	private static void sort2(int[] arr, int i) {
+		while (leftChild(i) < arr.length) {
+			int childPos = leftChild(i);
+			// 判断是否有右子树
+			if (leftChild(i) + 1 < arr.length) {
+				if (arr[leftChild(i)] < arr[leftChild(i) + 1]) {
+					childPos = leftChild(i) + 1;
+				}
+			}
+
+			if (arr[childPos] > arr[i]) {
+				int temp = arr[childPos];
+				arr[childPos] = arr[i];
+				arr[i] = temp;
+				i = childPos;
+			} else {
+				break;
+			}
+		}
 	}
 
 	private static void heapSort(int[] arr) {

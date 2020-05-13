@@ -21,9 +21,48 @@ import java.util.Arrays;
 public class HeapSort {
 	
 	public static void main(String[] args) {
-		int[] arr = { 50, 10, 90, 30, 70, 40, 80, 60, 20 };
-		heapSort(arr);
-		System.out.println(Arrays.toString(arr));
+//		int[] arr = { 50, 10, 90, 30, 70, 40, 80, 60, 20 };
+//		heapSort(arr);
+//		System.out.println(Arrays.toString(arr));
+		
+		int[] arr2 = { 50, 10, 90, 30, 70, 40, 80, 60, 20 };
+		heapSort2(arr2);
+		System.out.println(Arrays.toString(arr2));
+	}
+	
+	private static void heapSort2(int[] arr) {
+		for (int i = arr.length / 2; i >= 0; i--) {
+			sort(arr, i,arr.length);
+		}
+
+		int len=arr.length;
+		for (int i = arr.length - 1; i > 0; i--) {
+			int temp=arr[i];
+			arr[i]=arr[0];
+			arr[0]=temp;
+			len--;
+			sort(arr, 0,len);
+		}
+
+	}
+
+	private static void sort(int[] arr, int i,int len) {
+		while (leftChild(i) < len) {
+			int pos = leftChild(i);
+			if (leftChild(i) + 1 < len) {
+				if (arr[leftChild(i)] < arr[leftChild(i) + 1]) {
+					pos = leftChild(i) + 1;
+				}
+			}
+			if (arr[i] < arr[pos]) {
+				int temp = arr[i];
+				arr[i] = arr[pos];
+				arr[pos] = temp;
+				i = pos;
+			} else {
+				break;
+			}
+		}
 	}
  
 	/**
