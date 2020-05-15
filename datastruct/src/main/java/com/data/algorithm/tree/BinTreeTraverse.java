@@ -163,6 +163,79 @@ public class BinTreeTraverse {
 		Collections.reverse(ret);
 		return ret;
 	}
+	
+	/******************************************************************************/
+	
+	private static List<Node> pre(Node root) {
+		if (root == null) {
+			return new ArrayList<>();
+		}
+		List<Node> list = new ArrayList<Node>();
+		list.add(root);
+		list.addAll(pre(root.leftChild));
+		list.addAll(pre(root.rightChild));
+		return list;
+	}
+
+	private static List<Node> pre2(Node root) {
+		List<Node> list = new ArrayList<>();
+		Stack<Node> stack = new Stack<>();
+		stack.add(root);
+		while (!stack.isEmpty()) {
+			Node node = stack.pop();
+			if (node != null) {
+				list.add(node);
+				stack.add(node.rightChild);
+				stack.add(node.leftChild);
+			}
+		}
+		return list;
+	}
+
+	private static List<Node> in(Node root) {
+		if (root == null) {
+			return new ArrayList<>();
+		}
+		List<Node> list = new ArrayList<Node>();
+		list.addAll(in(root.leftChild));
+		list.add(root);
+		list.addAll(in(root.rightChild));
+		return list;
+	}
+
+	private static List<Node> in2(Node root) {
+		List<Node> list = new ArrayList<>();
+		Stack<Node> stack = new Stack<>();
+		while (root != null || !stack.isEmpty()) {
+			while (root != null) {
+				stack.add(root);
+				root = root.leftChild;
+			}
+			if (!stack.isEmpty()) {
+				Node temp = stack.pop();
+				list.add(temp);
+				root = temp.rightChild;
+			}
+		}
+		return list;
+	}
+
+	private static List<Node> post(Node root) {
+		if (root == null) {
+			return new ArrayList<>();
+		}
+		List<Node> list = new ArrayList<Node>();
+		list.addAll(post(root.leftChild));
+		list.addAll(post(root.rightChild));
+		list.add(root);
+		return list;
+	}
+	
+	
+	
+	
+	
+	
 
 	public static void main(String[] args) {
 		BinTreeTraverse binTree = new BinTreeTraverse();
