@@ -6,6 +6,14 @@ import java.util.Queue;
 import java.util.Stack;
 import java.util.concurrent.LinkedBlockingQueue;
 
+/**
+ * DFS（Deep First Search）深度优先搜索。BFS（Breath First Search）广度优先搜索
+ * 
+ * DFS:前序，中序，后续
+ * BFS:层遍历
+ * @author ksfzhaohui
+ *
+ */
 public class TreeTraverse {
 
 	private static List<Node> pre(Node root) {
