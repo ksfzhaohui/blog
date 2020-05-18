@@ -125,6 +125,7 @@ Java相关基础包括JVM，线程，并发编程，网络编程，锁，内存�
 * [2.Quartz数据库表分析](https://github.com/ksfzhaohui/blog/blob/master/quartz/2.Quartz%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E5%88%86%E6%9E%90.md "2.Quartz数据库表分析.md")
 * [3.Quartz调度源码分析](https://github.com/ksfzhaohui/blog/blob/master/quartz/3.Quartz%E8%B0%83%E5%BA%A6%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90.md "3.Quartz调度源码分析.md")
 * [4.基于Netty+Zookeeper+Quartz调度分析](https://github.com/ksfzhaohui/blog/blob/master/quartz/4.%E5%9F%BA%E4%BA%8ENetty%2BZookeeper%2BQuartz%E8%B0%83%E5%BA%A6%E5%88%86%E6%9E%90.md "4.基于Netty+Zookeeper+Quartz调度分析.md")
+* [5.细数那些使用过的定时器](https://github.com/ksfzhaohui/blog/blob/master/quartz/5.%E7%BB%86%E6%95%B0%E9%82%A3%E4%BA%9B%E4%BD%BF%E7%94%A8%E8%BF%87%E7%9A%84%E5%AE%9A%E6%97%B6%E5%99%A8.md "5.细数那些使用过的定时器.md")
 
 ### 4.7 搜索引擎
 开源的有ElasticSearch，商业的有Splunk等；
@@ -150,6 +151,9 @@ Java相关基础包括JVM，线程，并发编程，网络编程，锁，内存�
 * [2.Kubernetes Pod操作篇](https://github.com/ksfzhaohui/blog/blob/master/Kubernetes/Kubernetes%20Pod%E6%93%8D%E4%BD%9C%E7%AF%87.md "Kubernetes Pod操作篇.md")
 * [3.Kubernetes 副本机制篇](https://github.com/ksfzhaohui/blog/blob/master/Kubernetes/Kubernetes%20%E5%89%AF%E6%9C%AC%E6%9C%BA%E5%88%B6%E7%AF%87.md "Kubernetes 副本机制篇.md")
 * [4.Kubernetes服务篇](https://github.com/ksfzhaohui/blog/blob/master/Kubernetes/Kubernetes%E6%9C%8D%E5%8A%A1%E7%AF%87.md "Kubernetes服务篇.md")
+
+### 4.12 高可用设计
+* [1.线程隔离浅析](https://github.com/ksfzhaohui/blog/blob/master/hystrix/%E7%BA%BF%E7%A8%8B%E9%9A%94%E7%A6%BB%E6%B5%85%E6%9E%90.md "线程隔离浅析.md")
 
 ## 5.遇到的问题
 整理工作中遇到的一些典型问题，进行分析汇总；
