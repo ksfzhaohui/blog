@@ -12,11 +12,9 @@ import com.netflix.hystrix.HystrixCommandProperties;
 import com.netflix.hystrix.HystrixThreadPoolKey;
 import com.netflix.hystrix.HystrixThreadPoolProperties;
 
-public class GetOrderCommand extends HystrixCommand<String> {
+public class HelloCommand extends HystrixCommand<String> {
 
-	OrderService orderService = new OrderService();
-
-	public GetOrderCommand(String name) {
+	public HelloCommand(String name) {
 		super(Setter.withGroupKey(HystrixCommandGroupKey.Factory.asKey("ThreadPoolTestGroup"))
 				.andCommandKey(HystrixCommandKey.Factory.asKey("testCommandKey"))
 				.andThreadPoolKey(HystrixThreadPoolKey.Factory.asKey(name))
@@ -28,20 +26,22 @@ public class GetOrderCommand extends HystrixCommand<String> {
 	}
 
 	@Override
-	protected String run() {
-		return "Thread name="+Thread.currentThread().getName()+","+orderService.getOrderInfo();
+	protected String run() throws InterruptedException {
+		StringBuffer sb = new StringBuffer("Thread name=" + Thread.currentThread().getName() + ",");
+		Thread.sleep(2000);
+		return sb.append(System.currentTimeMillis()).toString();
 	}
 
 	@Override
 	protected String getFallback() {
-		return "Thread name="+Thread.currentThread().getName()+",fallback order";
+		return "Thread name=" + Thread.currentThread().getName() + ",fallback order";
 	}
 
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
 		List<Future<String>> list = new ArrayList<>();
-		System.out.println("Thread name="+Thread.currentThread().getName());
+		System.out.println("Thread name=" + Thread.currentThread().getName());
 		for (int i = 0; i < 8; i++) {
-			Future<String> future = new GetOrderCommand("hystrix-order").queue();
+			Future<String> future = new HelloCommand("hystrix-order").queue();
 			list.add(future);
 		}
 
