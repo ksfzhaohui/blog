@@ -9,5 +9,7 @@ public class GuavaCache1 {
         Cache<String,String> cache = CacheBuilder.newBuilder().build();
         cache.put("word","Hello Guava Cache");
         System.out.println(cache.getIfPresent("word"));
+        Object xx=cache.getIfPresent("xx");
+        System.out.println(xx);
     }
 }

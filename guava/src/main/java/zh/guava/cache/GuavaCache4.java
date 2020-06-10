@@ -15,11 +15,11 @@ public class GuavaCache4 {
 
 	public static void main(String[] args) throws InterruptedException {
 		test1();
-		test2();
+		//test2();
 	}
 
 	private static void test1() throws InterruptedException {
-		Cache<String, String> cache = CacheBuilder.newBuilder().maximumSize(2).expireAfterWrite(3, TimeUnit.SECONDS)
+		Cache<String, String> cache = CacheBuilder.newBuilder().maximumSize(2).expireAfterWrite(300, TimeUnit.SECONDS)
 				.build();
 		cache.put("key1", "value1");
 		int time = 1;
