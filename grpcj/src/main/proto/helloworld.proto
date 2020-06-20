@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+//生成java代码的package
+option java_package = "com.grpcj.generate";
+//创建的javaBean的文件名
+option java_outer_classname = "TestProto";
+// 可以生成rpc接口
+//option java_generic_services = true;
+
+package test;
+
+//声明一个服务名称
+service TestService {
+  //请求参数TestRequest   响应参数TestResponse
+  rpc SayHello (TestRequest) returns (TestResponse);
+}
+
+//请求
+message TestRequest {
+  string name = 1;
+}
+
+//响应
+message TestResponse {
+  string message = 1;
+}
