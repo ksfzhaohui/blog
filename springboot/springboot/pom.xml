@@ -110,11 +110,6 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		
-		 <dependency>
-	          <groupId>abcft</groupId>
-	          <artifactId>opencv</artifactId>
-	          <version>3.4.10</version>
-        </dependency>
         <dependency>
             <groupId>org.openpnp</groupId>
             <artifactId>opencv</artifactId>
