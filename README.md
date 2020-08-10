@@ -50,6 +50,7 @@ Java相关基础包括JVM，线程，并发编程，网络编程，锁，内存�
 ### 3.2 SpringBoot系列
 
 * [1.从SpringBoot整合Mybatis分析自动配置](https://github.com/ksfzhaohui/blog/blob/master/springboot/%E4%BB%8ESpringBoot%E6%95%B4%E5%90%88Mybatis%E5%88%86%E6%9E%90%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE.md "从SpringBoot整合Mybatis分析自动配置.md")
+* [2.SpringBoot使用OpenCV总结](https://github.com/ksfzhaohui/blog/blob/master/springboot/SpringBoot%E4%BD%BF%E7%94%A8OpenCV%E6%80%BB%E7%BB%93.md "SpringBoot使用OpenCV总结.md")
 
 ### 3.3 SpringSession系列
 * [1.Nginx+Tomcat关于Session的管理](https://github.com/ksfzhaohui/blog/blob/master/%E5%88%86%E5%B8%83%E5%BC%8F/Nginx%2BTomcat%E5%85%B3%E4%BA%8ESession%E7%9A%84%E7%AE%A1%E7%90%86.md "Nginx+Tomcat关于Session的管理.md")
