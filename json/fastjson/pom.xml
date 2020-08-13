@@ -39,7 +39,7 @@
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
 			<!-- <version>1.2.68</version> -->
-			<version>1.2.25</version>
+			<version>1.2.24</version>
 		</dependency>
 
 		<dependency>
