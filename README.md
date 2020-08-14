@@ -163,6 +163,7 @@ Java相关基础包括JVM，线程，并发编程，网络编程，锁，内存�
 * [2.一次排查多线程引发Java DNS缓存的Bug](https://github.com/ksfzhaohui/blog/blob/master/casestudy/%E4%B8%80%E6%AC%A1%E6%8E%92%E6%9F%A5%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%BC%95%E5%8F%91Java%20DNS%E7%BC%93%E5%AD%98%E7%9A%84Bug.md "一次排查多线程引发Java DNS缓存的Bug.md")
 * [3.记一次升级Oracle驱动引发的死锁](https://github.com/ksfzhaohui/blog/blob/master/casestudy/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%8D%87%E7%BA%A7Oracle%E9%A9%B1%E5%8A%A8%E5%BC%95%E5%8F%91%E7%9A%84%E6%AD%BB%E9%94%81.md "记一次升级Oracle驱动引发的死锁.md")
 * [4.关于Jackson默认丢失Bigdecimal精度问题分析](https://github.com/ksfzhaohui/blog/blob/master/serialization/1.%E5%85%B3%E4%BA%8EJackson%E9%BB%98%E8%AE%A4%E4%B8%A2%E5%A4%B1Bigdecimal%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90.md "1.关于Jackson默认丢失Bigdecimal精度问题分析.md")
+* [5.关于反序列化漏洞的一点认识](https://github.com/ksfzhaohui/blog/blob/master/json/%E5%85%B3%E4%BA%8E%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E7%9A%84%E4%B8%80%E7%82%B9%E8%AE%A4%E8%AF%86.md "关于反序列化漏洞的一点认识.md")
 
 ## 6.技术总结
 
