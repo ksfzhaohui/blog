@@ -12,7 +12,6 @@ public class Test2 {
         Apple apple = new Apple();
         apple.setName("apple");
         Buy buy = new Buy("online", apple);
-
         String jsonString2 = JSON.toJSONString(buy, SerializerFeature.WriteClassName);
         System.out.println("toJSONString : " + jsonString2);
 

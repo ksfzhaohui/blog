@@ -17,12 +17,8 @@ public class Test {
     public static void main(String[] args) {
         Apple apple = new Apple();
         apple.setName("apple");
-
         Buy buy = new Buy("online", apple);
-
-        RuntimeTypeAdapterFactory<Fruit> typeFactory = RuntimeTypeAdapterFactory.of(Fruit.class, "id")
-                .registerSubtype(Apple.class, "apple").registerSubtype(Banana.class, "banana");
-
+        RuntimeTypeAdapterFactory<Fruit> typeFactory = RuntimeTypeAdapterFactory.of(Fruit.class, "id").registerSubtype(Apple.class, "apple").registerSubtype(Banana.class, "banana");
         Gson gson = new GsonBuilder().registerTypeAdapterFactory(typeFactory).create();
 
         String jsonStr = gson.toJson(buy);
