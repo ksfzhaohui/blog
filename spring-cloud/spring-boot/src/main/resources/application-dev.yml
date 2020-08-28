@@ -1,0 +1,28 @@
+server:
+  port: 8082
+
+# Actuator提供了运行状态的监控功能，监控数据可以通过Rest，远程shell和JMX获得
+# management对外暴露Rest API接口的端口，采用非安全方式
+management:
+  port: 9002
+  security:
+    enabled: false
+
+# 开启可以使用 post请求http://localhost:9002/shutdown关闭应用
+endpoints:
+  shutdown:
+    enabled: true
+
+# redis相关配置    
+spring:
+  redis:
+    host: localhost
+    port: 6379
+    # password: root@123
+    database: 0
+    timeout: 0
+    pool: 
+      max-active: 8
+      max-wait: -1
+      max-idle: 500
+      min-idle: 0
