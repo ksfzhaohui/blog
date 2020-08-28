@@ -1,0 +1,29 @@
+---
+spring: 
+   profiles: peer1
+server:
+   port: 8761
+eureka:
+   instance:
+      hostname: peer1
+   client:
+      # 默认情况下Eureka会向自己注册，以下配置false防止自己被注册
+      registerWithEureka: false
+      fetchRegistry: false
+      serviceUrl:
+         defaultZone: http://localhost:8761/eureka/
+         
+---
+spring: 
+   profiles: peer2
+server:
+   port: 8762
+eureka:
+   instance:
+      hostname: peer2
+   client:
+      # 默认情况下Eureka会向自己注册，以下配置false防止自己被注册
+      registerWithEureka: false
+      fetchRegistry: false
+      serviceUrl:
+         defaultZone: http://localhost:8762/eureka/
