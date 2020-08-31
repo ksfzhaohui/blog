@@ -1,3 +1,6 @@
+# java -jar eureka-server-0.0.1-SNAPSHOT --spring.profiles.active=peer1
+# java -jar eureka-server-0.0.1-SNAPSHOT --spring.profiles.active=peer2
+
 ---
 spring: 
    profiles: peer1
@@ -7,11 +10,8 @@ eureka:
    instance:
       hostname: peer1
    client:
-      # 默认情况下Eureka会向自己注册，以下配置false防止自己被注册
-      registerWithEureka: false
-      fetchRegistry: false
       serviceUrl:
-         defaultZone: http://localhost:8761/eureka/
+         defaultZone: http://peer2:8762/eureka/
          
 ---
 spring: 
@@ -22,8 +22,5 @@ eureka:
    instance:
       hostname: peer2
    client:
-      # 默认情况下Eureka会向自己注册，以下配置false防止自己被注册
-      registerWithEureka: false
-      fetchRegistry: false
       serviceUrl:
-         defaultZone: http://localhost:8762/eureka/
+         defaultZone: http://peer1:8761/eureka/

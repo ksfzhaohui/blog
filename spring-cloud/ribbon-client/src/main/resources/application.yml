@@ -1,0 +1,10 @@
+# 本地缓存的服务器列表
+stores:
+  ribbon:
+    listOfServers: example.com,google.com
+
+ribbon:
+  eureka:
+   enabled: false
+server:
+  port: 8769
