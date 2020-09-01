@@ -5,19 +5,13 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.zh</groupId>
-	<artifactId>eureka-ribbon-client</artifactId>
+	<artifactId>eureka-feign-client</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>eureka-ribbon-client</name>
+	<name>eureka-feign-client</name>
 	<description>Demo project for Spring Boot</description>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
-		<spring-cloud.version>Dalston.SR1</spring-cloud.version>
-	</properties>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -25,6 +19,14 @@
 		<version>1.5.2.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
+
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<spring-cloud.version>Dalston.SR1</spring-cloud.version>
+	</properties>
 
 	<dependencyManagement>
 		<dependencies>
@@ -39,14 +41,23 @@
 	</dependencyManagement>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-feign</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.netflix.feign</groupId>
+			<artifactId>feign-httpclient</artifactId>
+			<version>RELEASE</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-ribbon</artifactId>
-		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -56,16 +67,6 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-hystrix</artifactId>
 		</dependency>
-		
-		<!-- 监控熔断器状态 -->
-		<dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
-        </dependency>
 	</dependencies>
 
 	<build>
@@ -76,5 +77,6 @@
 			</plugin>
 		</plugins>
 	</build>
+
 
 </project>
