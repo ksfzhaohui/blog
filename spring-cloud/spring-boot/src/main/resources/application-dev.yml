@@ -26,3 +26,6 @@ spring:
       max-wait: -1
       max-idle: 500
       min-idle: 0
+      
+logging: 
+   config: classpath:logback-spring.xml
