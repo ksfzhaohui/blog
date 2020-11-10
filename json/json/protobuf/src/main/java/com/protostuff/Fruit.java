@@ -1,4 +1,4 @@
-package com.protobuf;
+package com.protostuff;
 
 public interface Fruit {
 

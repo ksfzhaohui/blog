@@ -1,6 +1,6 @@
-package com.protobuf.impl;
+package com.protostuff.impl;
 
-import com.protobuf.Fruit;
+import com.protostuff.Fruit;
 
 public class Banana implements Fruit {
 

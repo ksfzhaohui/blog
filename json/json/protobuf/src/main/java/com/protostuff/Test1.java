@@ -1,9 +1,9 @@
-package com.protobuf;
+package com.protostuff;
 
 import java.util.Arrays;
 
-import com.protobuf.impl.Apple;
-import com.protobuf.impl.Banana;
+import com.protostuff.impl.Apple;
+import com.protostuff.impl.Banana;
 
 import io.protostuff.LinkedBuffer;
 import io.protostuff.ProtostuffIOUtil;

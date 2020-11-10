@@ -1,0 +1,8 @@
+option java_package = "com.protobuf.clazz"; 
+option java_outer_classname = "Person";
+
+message person {
+  required int32 id = 1;
+  required string name = 2;
+  required string email = 3;
+}
