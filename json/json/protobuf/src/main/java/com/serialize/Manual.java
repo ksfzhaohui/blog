@@ -1,24 +1,22 @@
 package com.serialize;
 
-import com.protostuff.Person;
-
 public class Manual {
 
-	
 	public static void main(String[] args) {
+
+	}
+
+	public static void test() {
+		Person person = new Person("10001", "zhaohui");
 		long startTime = System.currentTimeMillis();
-		for (int i = 0; i < 100000; i++) {
-			Person person = new Person();
-			person.setId(1);
-			person.setName("zhaohui");
-			person.setEmail("xxxxxxxx@126.com");
-
-			
-			person.serialize();
+		for (int i = 0; i < 1_0000_0000; i++) {
+			if (i % 2 == 0) {
+				person.getId();
+			} else {
+				person.getName();
+			}
 		}
-		
 		long endTime = System.currentTimeMillis();
-
-		System.out.println("time:" + (endTime - startTime));
+		System.out.println("Manual time:" + (endTime - startTime) + "ms");
 	}
 }
