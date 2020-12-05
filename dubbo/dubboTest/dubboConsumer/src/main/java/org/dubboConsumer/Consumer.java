@@ -15,6 +15,7 @@ public class Consumer {
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("dubbo-consumer.xml");
 		context.start();
+		RpcContext.getContext().setAttachment("tag", "gray");
 		DemoService demoService = (DemoService) context.getBean("demoService"); // 获取远程服务代理
 
 		// System.out.println(demoService.syncSayHello("world"));
