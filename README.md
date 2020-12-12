@@ -156,6 +156,10 @@ Java相关基础包括JVM，线程，并发编程，网络编程，锁，内存�
 
 ### 4.12 高可用设计
 * [1.线程隔离浅析](https://github.com/ksfzhaohui/blog/blob/master/hystrix/%E7%BA%BF%E7%A8%8B%E9%9A%94%E7%A6%BB%E6%B5%85%E6%9E%90.md "线程隔离浅析.md")
+* [2.限流浅析](https://github.com/ksfzhaohui/blog/blob/master/limiter/%E9%99%90%E6%B5%81%E6%B5%85%E6%9E%90.md "限流浅析.md")
+* [3.灰度发布浅析](https://github.com/ksfzhaohui/blog/blob/master/%E9%AB%98%E5%8F%AF%E7%94%A8/%E7%81%B0%E5%BA%A6%E5%8F%91%E5%B8%83%E6%B5%85%E6%9E%90.md "灰度发布浅析.md")
+* [4.如何做一个防重设计](https://github.com/ksfzhaohui/blog/blob/master/%E9%AB%98%E5%8F%AF%E7%94%A8/%E5%A6%82%E4%BD%95%E5%81%9A%E4%B8%80%E4%B8%AA%E9%98%B2%E9%87%8D%E8%AE%BE%E8%AE%A1.md "如何做一个防重设计.md")
+
 
 ## 5.遇到的问题
 整理工作中遇到的一些典型问题，进行分析汇总；
