@@ -1,11 +1,14 @@
 package com.serialize;
 
 import com.esotericsoftware.reflectasm.MethodAccess;
+import com.protostuff.Person;
 
 public class ASM {
 
-	public static void main(String[] args) {
-
+	public static void main(String[] args) throws IllegalArgumentException, IllegalAccessException {
+		for (int i = 0; i < 1; i++) {
+			test();
+		}
 	}
 
 	public static void test() {

@@ -2,9 +2,14 @@ package com.serialize;
 
 import java.lang.reflect.Method;
 
+import com.protostuff.Person;
+
 public class Reflex {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
+		for (int i = 0; i < 1; i++) {
+			test();
+		}
 	}
 
 	public static void test() throws Exception {

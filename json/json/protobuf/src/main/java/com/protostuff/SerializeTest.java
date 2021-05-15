@@ -12,9 +12,9 @@ public class SerializeTest {
 		long startTime = System.currentTimeMillis();
 		for (int i = 0; i < 100000; i++) {
 			Person person = new Person();
-			person.setId(1);
+//			person.setId(1);
 			person.setName("zhaohui");
-			person.setEmail("xxxxxxxx@126.com");
+//			person.setEmail("xxxxxxxx@126.com");
 
 			Schema<Person> schema = RuntimeSchema.getSchema(Person.class);
 			LinkedBuffer buffer = LinkedBuffer.allocate(1024);

@@ -1,9 +1,13 @@
 package com.serialize;
 
+import com.protostuff.Person;
+
 public class Manual {
 
 	public static void main(String[] args) {
-
+		for (int i = 0; i < 1; i++) {
+			test();
+		}
 	}
 
 	public static void test() {
