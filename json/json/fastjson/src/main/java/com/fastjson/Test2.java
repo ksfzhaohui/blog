@@ -8,7 +8,7 @@ import com.fastjson.impl.Apple;
 public class Test2 {
 
     public static void main(String[] args) throws Exception {
-//        ParserConfig.getGlobalInstance().setAutoTypeSupport(false);
+        ParserConfig.getGlobalInstance().setAutoTypeSupport(true);
         Apple apple = new Apple();
         apple.setName("apple");
         Buy buy = new Buy("online", apple);

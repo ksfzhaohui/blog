@@ -25,12 +25,12 @@ public class Test3 {
 
         System.out.println("toJSONString : " + jsonString2);
 
-//        JSON.parse(jsonString2);
-        try {
-            Buy newBuy2 = JSON.parseObject(jsonString2, Buy.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        JSON.parse(jsonString2);
+//        try {
+//            Buy newBuy2 = JSON.parseObject(jsonString2, Buy.class);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
         
         Thread.sleep(100000);
 
