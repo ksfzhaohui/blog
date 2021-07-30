@@ -36,8 +36,8 @@ public class LRUCache {
 			node = new LRUNode(key, value);
 			if (map.size() >= capacity) {
 				map.remove(tail);
-				tail.next = null;
 				tail = tail.pre;
+				tail.next = null;
 			}
 			map.put(key, node);
 
