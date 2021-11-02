@@ -10,6 +10,22 @@ import java.util.Map;
  *
  */
 public class 二元数组最短路径 {
+	
+	public static void test(int[][] path,int curI,int curJ){
+		for(int k=0;k<2;k++){
+			if(k==0){//向右
+				if(curI<path.length){
+					curI--;
+					test(path, curI, curJ);
+				}
+			}else{//向下
+				if(curJ<path[0].length){
+					curJ--;
+					test(path, curI, curJ);
+				}
+			}
+		}
+	}
 
 
 	private static int minPathSum(int[][] path, int i, int j) {

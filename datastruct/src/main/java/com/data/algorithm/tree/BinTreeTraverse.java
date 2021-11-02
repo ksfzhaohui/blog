@@ -97,6 +97,28 @@ public class BinTreeTraverse {
 
 		return list;
 	}
+	
+	private List<Node> pre21(Node node){
+		List<Node> list=new ArrayList<>();
+		Stack<Node> stack=new Stack<>();
+		
+		stack.add(node);
+		
+		while(!stack.isEmpty()){
+			Node n=stack.pop();
+			if(n!=null){
+				list.add(n);
+				if(n.rightChild!=null){
+					stack.add(n.rightChild);
+				}
+				if(n.leftChild!=null){
+					stack.add(n.leftChild);
+				}
+				
+			}
+		}
+		return list;
+	}
 
 	/**
 	 * 中序遍历

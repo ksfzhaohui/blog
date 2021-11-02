@@ -25,7 +25,7 @@ public class HeapSort {
 //		heapSort(arr);
 //		System.out.println(Arrays.toString(arr));
 		
-		int[] arr2 = { 50, 10, 90, 30, 70, 40, 80, 60, 20 };
+		int[] arr2 = { 4, 5, 2, 1, 9, 0, 3 };
 		heapSort2(arr2);
 		System.out.println(Arrays.toString(arr2));
 	}
